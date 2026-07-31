@@ -340,24 +340,21 @@ function drawDoodle(){
 
 // bewegung
 
-function update() {
+function update(){
 
- if(keys["d"]){
-        player.x += 5;
-    }
+    if(keys["a"]){
 
-    console.log(player.x);
-
-}
-    
-    if (keys["a"]) {
-        player.x -= 5;
+        player.x -= player.speed;
         console.log("links");
+
     }
 
-    if (keys["d"]) {
-        player.x += 5;
+
+    if(keys["d"]){
+
+        player.x += player.speed;
         console.log("rechts");
+
     }
 
 
