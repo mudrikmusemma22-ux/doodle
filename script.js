@@ -34,6 +34,61 @@ window.addEventListener("keyup", (e) => {
     keys[e.key.toLowerCase()] = false;
 });
 
+// pinsel
+
+let brush = false;
+
+let drawings = [];
+
+
+let mouse = {
+    x: 0,
+    y: 0,
+    down: false
+};
+
+
+// maus bewegen
+
+canvas.addEventListener("mousemove", (e) => {
+
+    let rect = canvas.getBoundingClientRect();
+
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+
+});
+
+
+// maus drücken
+
+canvas.addEventListener("mousedown", () => {
+
+    mouse.down = true;
+
+});
+
+
+// maus loslassen
+
+canvas.addEventListener("mouseup", () => {
+
+    mouse.down = false;
+
+});
+
+
+// pinsel auswählen
+
+window.addEventListener("keydown", (e) => {
+
+    if(e.key === "1"){
+
+        brush = true;
+
+    }
+
+});
 
 // schnee
 
