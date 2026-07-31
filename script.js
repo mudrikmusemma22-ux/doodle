@@ -242,13 +242,18 @@ function drawMountain(x, y, w, h) {
 
 
 // doodle ritter
+function drawDoodle(){
 
-function drawDoodle() {
+    ctx.fillStyle = "red";
 
-    let x = player.x - camera.x;
-    let y = canvas.height - 230;
+    ctx.fillRect(
+        player.x,
+        canvas.height - 200,
+        50,
+        50
+    );
 
-
+}
     // umhang
 
     ctx.fillStyle = "#7d3030";
