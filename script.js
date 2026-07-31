@@ -15,13 +15,13 @@ resize();
 const player = {
     x: 100,
     width: 40,
-    height: 60,
+    height: 80,
     speed: 5,
     dx: 0
 };
 
 
-// Tasten speichern
+// Tasten
 const keys = {};
 
 window.addEventListener("keydown", (e) => {
@@ -53,7 +53,7 @@ function update() {
 // Zeichnen
 function draw() {
 
-    // golden-brown Himmel
+    // golden brown Himmel
     let sky = ctx.createLinearGradient(
         0,
         0,
@@ -61,9 +61,9 @@ function draw() {
         canvas.height
     );
 
-    sky.addColorStop(0, "#b88a52");
-    sky.addColorStop(0.5, "#d7b27b");
-    sky.addColorStop(1, "#f2e6c8");
+    sky.addColorStop(0, "#a87545");
+    sky.addColorStop(0.5, "#d2a66c");
+    sky.addColorStop(1, "#f0dfbd");
 
     ctx.fillStyle = sky;
     ctx.fillRect(
@@ -74,8 +74,8 @@ function draw() {
     );
 
 
-    // Boden
-    ctx.fillStyle = "#d8d0bb";
+    // Boden (Schnee)
+    ctx.fillStyle = "#e8dfc8";
     ctx.fillRect(
         0,
         canvas.height - 120,
@@ -84,95 +84,90 @@ function draw() {
     );
 
 
-    // Doodle der Ritter
+    // Doodle Ritter
 
-let doodleX = player.x;
-let doodleY = canvas.height - 180;
-
-// umhang
-ctx.fillStyle = "#7a2f35";
-ctx.beginPath();
-ctx.moveTo(doodleX + 5, doodleY + 30);
-ctx.lineTo(doodleX - 20, doodleY + 70);
-ctx.lineTo(doodleX + 10, doodleY + 80);
-ctx.closePath();
-ctx.fill();
-
-// körper / rüstung
-ctx.fillStyle = "#777";
-ctx.fillRect(
-    doodleX,
-    doodleY + 35,
-    35,
-    45
-);
-
-// helm
-ctx.fillStyle = "#aaa";
-ctx.beginPath();
-ctx.arc(
-    doodleX + 18,
-    doodleY + 20,
-    18,
-    0,
-    Math.PI * 2
-);
-ctx.fill();
-
-// visier
-ctx.fillStyle = "#333";
-ctx.fillRect(
-    doodleX + 5,
-    doodleY + 18,
-    25,
-    5
-);
-
-// schwert
-ctx.strokeStyle = "#222";
-ctx.lineWidth = 4;
-ctx.beginPath();
-ctx.moveTo(
-    doodleX + 35,
-    doodleY + 45
-);
-ctx.lineTo(
-    doodleX + 65,
-    doodleY + 15
-);
-ctx.stroke();
-// Schwert
-ctx.strokeStyle = "#222";
-ctx.lineWidth = 4;
-ctx.beginPath();
-ctx.moveTo(
-    doodleX + 40,
-    doodleY + 35
-);
-ctx.lineTo(
-    doodleX + 60,
-    doodleY + 10
-);
-ctx.stroke();
+    let x = player.x;
+    let y = canvas.height - 180;
 
 
-    // Position anzeigen
+    // Umhang
+    ctx.fillStyle = "#7d3030";
+    ctx.beginPath();
+    ctx.moveTo(x + 5, y + 30);
+    ctx.lineTo(x - 25, y + 85);
+    ctx.lineTo(x + 15, y + 75);
+    ctx.closePath();
+    ctx.fill();
+
+
+    // Rüstung
+    ctx.fillStyle = "#777";
+    ctx.fillRect(
+        x,
+        y + 35,
+        40,
+        45
+    );
+
+
+    // Helm
+    ctx.fillStyle = "#aaa";
+    ctx.beginPath();
+    ctx.arc(
+        x + 20,
+        y + 25,
+        22,
+        0,
+        Math.PI * 2
+    );
+    ctx.fill();
+
+
+    // Visier
+    ctx.fillStyle = "#333";
+    ctx.fillRect(
+        x + 5,
+        y + 20,
+        30,
+        6
+    );
+
+
+    // Schwert
+    ctx.strokeStyle = "#222";
+    ctx.lineWidth = 5;
+
+    ctx.beginPath();
+    ctx.moveTo(
+        x + 40,
+        y + 55
+    );
+    ctx.lineTo(
+        x + 70,
+        y + 20
+    );
+    ctx.stroke();
+
+
+    // Position
     ctx.fillStyle = "#000";
     ctx.font = "20px Arial";
     ctx.fillText(
-        "doodle position: " + Math.floor(player.x),
+        "doodle x: " + Math.floor(player.x),
         20,
         40
     );
 }
 
 
-// Spiel starten
+// Spielschleife
 function gameLoop() {
+
     update();
     draw();
 
     requestAnimationFrame(gameLoop);
 }
+
 
 gameLoop();
