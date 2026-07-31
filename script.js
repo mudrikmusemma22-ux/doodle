@@ -338,12 +338,12 @@ function drawDoodle(){
 function update(){
 
     if(keys["d"]){
-        player.x = player.x + 20;
+        player.x += player.speed;
         console.log("D MOVE:", player.x);
     }
 
     if(keys["a"]){
-        player.x = player.x - 20;
+        player.x += player.speed;
         console.log("A MOVE:", player.x);
     }
 
