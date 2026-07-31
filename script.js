@@ -7,6 +7,17 @@ const camera = {
     x: 0
 };
 
+
+// berge für den loop
+
+const mountains = [
+    {x: 100, w: 500, h: 300},
+    {x: 800, w: 600, h: 400},
+    {x: 1500, w: 700, h: 450},
+    {x: 2400, w: 800, h: 500}
+];
+
+
 // größe
 
 function resize() {
