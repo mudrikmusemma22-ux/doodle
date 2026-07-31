@@ -327,21 +327,19 @@ function drawDoodle() {
 
 
 // bewegung
-
 function update() {
 
-    player.dx = 0;
-
-
     if (keys["a"]) {
-        player.dx = -player.speed;
+        player.x -= 5;
+        console.log("links");
     }
-
 
     if (keys["d"]) {
-        player.dx = player.speed;
+        player.x += 5;
+        console.log("rechts");
     }
 
+}
 
     player.worldX += player.dx;  player.x = player.worldX;  camera.x = player.worldX - canvas.width / 2;
 
