@@ -148,22 +148,22 @@ drawCloud(600, 250, 60);
 drawCloud(1000, 150, 50);
 
 
-    // Berge
 
-    drawMountain(
+   // Berge
+
+drawMountain(
     50,
-    canvas.height - 250,
+    canvas.height - 120,
     500,
-    400
+    250
 );
 
 drawMountain(
     650,
-    canvas.height - 250,
+    canvas.height - 120,
     600,
-    500
+    350
 );
-
     // Schnee Boden
 
     ctx.fillStyle = "#e8dfc8";
