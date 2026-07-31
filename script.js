@@ -378,9 +378,14 @@ function drawBrush(){
 
 // zeichnen
 
-function draw() {
+function draw(){
 
+    ctx.fillStyle = "#222";
+    ctx.font = "20px Arial";
+    ctx.fillText("Doodle läuft!", 20, 30);
 
+    // rest vom code
+    
     // golden brown himmel
 
     let sky = ctx.createLinearGradient(
