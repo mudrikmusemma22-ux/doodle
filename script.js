@@ -488,38 +488,16 @@ function draw(){
 
     // berge
 
+for(let m of mountains){
 
-drawMountain(
-    100 - camera.x,
-    canvas.height - 120,
-    500,
-    300
-);
+    drawMountain(
+        m.x - camera.x,
+        canvas.height - 120,
+        m.w,
+        m.h
+    );
 
-
-drawMountain(
-    800 - camera.x,
-    canvas.height - 120,
-    600,
-    400
-);
-
-
-drawMountain(
-    1500 - camera.x,
-    canvas.height - 120,
-    700,
-    450
-);
-
-
-drawMountain(
-    2400 - camera.x,
-    canvas.height - 120,
-    800,
-    500
-);
-
+}
     // boden
 
     ctx.fillStyle = "#e8dfc8";
