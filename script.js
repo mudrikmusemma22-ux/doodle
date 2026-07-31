@@ -74,15 +74,47 @@ function draw() {
     );
 
 
-    // Boden (Schnee)
-    ctx.fillStyle = "#e8dfc8";
-    ctx.fillRect(
+   // Wolken (gemalter Stil)
+
+function drawCloud(x, y, size) {
+
+    ctx.fillStyle = "#f5ead2";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        x,
+        y,
+        size,
         0,
-        canvas.height - 120,
-        canvas.width,
-        120
+        Math.PI * 2
     );
 
+    ctx.arc(
+        x + size,
+        y - 10,
+        size * 1.2,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.arc(
+        x + size * 2,
+        y,
+        size,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fill();
+}
+
+
+// wolken am himmel
+
+drawCloud(200, 120, 30);
+drawCloud(600, 180, 45);
+drawCloud(1000, 100, 35);
 
     // Doodle Ritter
 
