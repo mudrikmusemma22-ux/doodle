@@ -309,27 +309,26 @@ function drawDoodle(){
 
 
 
-    // schwert
+  // schwert
 
-    ctx.strokeStyle = "#222";
+ctx.strokeStyle = "#222";
 
-    ctx.lineWidth = 5;
+ctx.lineWidth = 5;
 
-    ctx.beginPath();
+ctx.beginPath();
 
-    ctx.moveTo(
-        x + 45,
-        y + 70
-    );
+ctx.moveTo(
+    x + 45,
+    y + 70
+);
 
-    ctx.lineTo(
-        x + 85,
-        y + 20
-    );
+ctx.lineTo(
+    x + 85,
+    y + 20
+);
 
-    ctx.stroke();
+ctx.stroke();
 
-}
 
 // beine
 
@@ -349,23 +348,6 @@ ctx.beginPath();
 ctx.moveTo(x + 33, y + 105);
 ctx.lineTo(x + 33 - legMove, y + 145);
 ctx.stroke();
-
-}
-
-// bewegung
-function update(){
-if(keys["a"]){
-
-    player.x -= player.speed;
-    console.log("links");
-
-}
-
-
-if(keys["d"]){
-
-    player.x += player.speed;
-    console.log("rechts");
 
 }
 
