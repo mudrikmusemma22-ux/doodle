@@ -1,8 +1,6 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
-alert("doodle code läuft");
 
-// Bildschirmgröße
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -12,24 +10,16 @@ window.addEventListener("resize", resize);
 resize();
 
 
-// Spieler
+// spieler
 
 const player = {
-    x: 100,
-    width: 40,
+    x: 300,
     speed: 5,
     dx: 0
 };
 
 
-// Kamera
-
-const camera = {
-    x: 0
-};
-
-
-// Tasten
+// tasten
 
 const keys = {};
 
@@ -42,17 +32,17 @@ window.addEventListener("keyup", (e) => {
 });
 
 
-// Schneeflocken
+// schnee
 
 let snowflakes = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 40; i++) {
 
     snowflakes.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        size: Math.random() * 3 + 1,
-        speed: Math.random() * 1 + 0.5
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 3 + 2,
+        speed: Math.random() + 0.5
     });
 
 }
@@ -62,109 +52,66 @@ function drawSnow() {
 
     ctx.fillStyle = "#fff4dd";
 
-    for (let snow of snowflakes) {
+    snowflakes.forEach(s => {
 
         ctx.beginPath();
 
         ctx.arc(
-            snow.x,
-            snow.y,
-            snow.size,
+            s.x,
+            s.y,
+            s.size,
             0,
             Math.PI * 2
         );
 
         ctx.fill();
 
+        s.y += s.speed;
 
-        snow.y += snow.speed;
-
-
-        if (snow.y > canvas.height) {
-            snow.y = -5;
-            snow.x = Math.random() * canvas.width;
+        if (s.y > canvas.height) {
+            s.y = -10;
         }
 
-    }
+    });
 
 }
 
 
-// Bewegung
+// wolken
 
-function update() {
+function drawCloud(x,y,size){
 
-    player.dx = 0;
-
-
-    if (keys["a"] || keys["arrowleft"]) {
-        player.dx = -player.speed;
-    }
-
-
-    if (keys["d"] || keys["arrowright"]) {
-        player.dx = player.speed;
-    }
-
-
-    player.x += player.dx;
-
-
-    // Kamera folgt
-
-    camera.x = player.x - 300;
-
-}
-
-
-// Wolken
-
-function drawCloud(x, y, size) {
-
-    ctx.fillStyle = "#f5ead2";
+    ctx.fillStyle="#f5ead2";
 
     ctx.beginPath();
 
-    ctx.arc(x, y, size, 0, Math.PI * 2);
-
-    ctx.arc(
-        x + size,
-        y - 10,
-        size * 1.2,
-        0,
-        Math.PI * 2
-    );
-
-    ctx.arc(
-        x + size * 2,
-        y,
-        size,
-        0,
-        Math.PI * 2
-    );
+    ctx.arc(x,y,size,0,Math.PI*2);
+    ctx.arc(x+size,y-10,size*1.2,0,Math.PI*2);
+    ctx.arc(x+size*2,y,size,0,Math.PI*2);
 
     ctx.fill();
 
 }
 
 
-// Berge
 
-function drawMountain(x, y, width, height) {
+// berge
 
-    ctx.fillStyle = "#b8a58a";
+function drawMountain(x,y,w,h){
+
+    ctx.fillStyle="#b39a7a";
 
     ctx.beginPath();
 
-    ctx.moveTo(x, y);
+    ctx.moveTo(x,y);
 
     ctx.lineTo(
-        x + width / 2,
-        y - height
+        x+w/2,
+        y-h
     );
 
     ctx.lineTo(
-        x + width,
+        x+w,
         y
     );
 
@@ -173,140 +120,62 @@ function drawMountain(x, y, width, height) {
     ctx.fill();
 
 
-   
-}// Schnee auf dem Berg (gemalter Stil)
 
-ctx.fillStyle = "#fff4dd";
+    // bergschnee
 
-ctx.beginPath();
-
-ctx.moveTo(
-    x + width / 2,
-    y - height
-);
-
-// linke Schneekante
-ctx.lineTo(
-    x + width / 2 - 80,
-    y - height + 100
-);
-
-// kleine Welle
-ctx.lineTo(
-    x + width / 2 - 35,
-    y - height + 80
-);
-
-// rechte Schneekante
-ctx.lineTo(
-    x + width / 2 + 70,
-    y - height + 120
-);
-
-ctx.closePath();
-
-ctx.fill();
-
-
-// Zeichnen
-
-function draw() {
-
-
-    // Himmel
-
-    let sky = ctx.createLinearGradient(
-        0,
-        0,
-        0,
-        canvas.height
-    );
-
-
-    sky.addColorStop(0, "#a87545");
-    sky.addColorStop(0.5, "#d2a66c");
-    sky.addColorStop(1, "#f0dfbd");
-
-
-    ctx.fillStyle = sky;
-
-
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-
-    // Wolken mit Kamera
-
-    drawCloud(
-        150 - camera.x * 0.2,
-        120,
-        30
-    );
-
-    drawCloud(
-        600 - camera.x * 0.2,
-        160,
-        45
-    );
-
-
-    drawCloud(
-        1000 - camera.x * 0.2,
-        100,
-        35
-    );
-
-
-    // Berge mit Kamera
-
-    drawMountain(
-        50 - camera.x,
-        canvas.height - 120,
-        500,
-        250
-    );
-
-
-    drawMountain(
-        650 - camera.x,
-        canvas.height - 120,
-        600,
-        350
-    );
-
-
-    // Schnee Boden
-
-    ctx.fillStyle = "#e8dfc8";
-
-    ctx.fillRect(
-        0,
-        canvas.height - 120,
-        canvas.width,
-        120
-    );
-
-
-
-    // Doodle Ritter
-
-    let x = player.x - camera.x;
-    let y = canvas.height - 200;
-
-
-    // Umhang
-
-    ctx.fillStyle = "#7d3030";
+    ctx.fillStyle="#fff4dd";
 
     ctx.beginPath();
 
-    ctx.moveTo(x + 5, y + 30);
-    ctx.lineTo(x - 20, y + 90);
-    ctx.lineTo(x + 15, y + 75);
+    ctx.moveTo(
+        x+w/2,
+        y-h
+    );
+
+    ctx.lineTo(
+        x+w/2-80,
+        y-h+100
+    );
+
+    ctx.lineTo(
+        x+w/2-20,
+        y-h+70
+    );
+
+    ctx.lineTo(
+        x+w/2+40,
+        y-h+120
+    );
+
+    ctx.lineTo(
+        x+w/2+80,
+        y-h+90
+    );
+
+    ctx.closePath();
+
+    ctx.fill();
+
+}
+
+
+// doodle
+
+function drawDoodle(){
+
+    let x = player.x;
+    let y = canvas.height-230;
+
+
+    // umhang
+
+    ctx.fillStyle="#7d3030";
+
+    ctx.beginPath();
+
+    ctx.moveTo(x,y+40);
+    ctx.lineTo(x-25,y+100);
+    ctx.lineTo(x+20,y+90);
 
     ctx.closePath();
 
@@ -314,113 +183,203 @@ function draw() {
 
 
 
-    // Rüstung
+    // rüstung
 
-    ctx.fillStyle = "#777";
+    ctx.fillStyle="#777";
 
     ctx.fillRect(
         x,
-        y + 35,
-        40,
-        50
+        y+50,
+        45,
+        55
     );
 
 
 
-    // Helm
+    // helm
 
-   // Helm
-
-ctx.fillStyle = "#aaa";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 20,
-    y + 20,
-    25,
-    Math.PI,
-    Math.PI * 2
-);
-
-ctx.fill();
-
-
-// Helm seiten
-
-ctx.fillRect(
-    x - 5,
-    y + 15,
-    50,
-    15
-);
-
-
-// Visier
-
-ctx.fillStyle = "#333";
-
-ctx.fillRect(
-    x + 5,
-    y + 20,
-    30,
-    6
-);
-    
-    ctx.fill();
-    
-// Helm Rand (Buntstift-Linie)
-
-ctx.strokeStyle = "#333";
-ctx.lineWidth = 3;
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 20,
-    y + 20,
-    22,
-    0,
-    Math.PI * 2
-);
-
-ctx.stroke();
-
-
-    // Schwert
-
-    ctx.strokeStyle = "#222";
-    ctx.lineWidth = 5;
+    ctx.fillStyle="#aaa";
 
     ctx.beginPath();
 
-    ctx.moveTo(
-        x + 40,
-        y + 55
+    ctx.arc(
+        x+22,
+        y+35,
+        27,
+        0,
+        Math.PI*2
     );
 
-    ctx.lineTo(
-        x + 70,
-        y + 20
-    );
+    ctx.fill();
+
+
+    // helm rand
+
+    ctx.strokeStyle="#333";
+    ctx.lineWidth=3;
 
     ctx.stroke();
 
 
 
-    // Schnee
+    // visier
 
-    drawSnow();
+    ctx.fillStyle="#333";
 
+    ctx.fillRect(
+        x-5,
+        y+30,
+        50,
+        8
+    );
+
+
+    // schwert
+
+    ctx.strokeStyle="#222";
+    ctx.lineWidth=5;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        x+45,
+        y+70
+    );
+
+    ctx.lineTo(
+        x+85,
+        y+20
+    );
+
+    ctx.stroke();
 
 }
 
 
-// Spielschleife
 
-function gameLoop() {
+// buntstift effekt
+
+function pencilTexture(){
+
+    for(let i=0;i<250;i++){
+
+        ctx.strokeStyle="rgba(80,60,40,0.08)";
+
+        ctx.beginPath();
+
+        let x=Math.random()*canvas.width;
+        let y=Math.random()*canvas.height;
+
+        ctx.moveTo(x,y);
+
+        ctx.lineTo(
+            x+10,
+            y+10
+        );
+
+        ctx.stroke();
+
+    }
+
+}
+
+
+
+// update
+
+function update(){
+
+    player.dx=0;
+
+    if(keys["a"]){
+        player.dx=-player.speed;
+    }
+
+    if(keys["d"]){
+        player.dx=player.speed;
+    }
+
+
+    player.x+=player.dx;
+
+}
+
+
+
+// zeichnen
+
+function draw(){
+
+
+    let sky=ctx.createLinearGradient(
+        0,
+        0,
+        0,
+        canvas.height
+    );
+
+    sky.addColorStop(0,"#a87545");
+    sky.addColorStop(1,"#f0dfbd");
+
+
+    ctx.fillStyle=sky;
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+
+    drawCloud(150,130,35);
+    drawCloud(700,170,45);
+
+
+    drawMountain(
+        100,
+        canvas.height-120,
+        500,
+        300
+    );
+
+
+    drawMountain(
+        800,
+        canvas.height-120,
+        600,
+        400
+    );
+
+
+
+    ctx.fillStyle="#e8dfc8";
+
+    ctx.fillRect(
+        0,
+        canvas.height-120,
+        canvas.width,
+        120
+    );
+
+
+    drawDoodle();
+
+    drawSnow();
+
+    pencilTexture();
+
+}
+
+
+
+// loop
+
+function gameLoop(){
 
     update();
+
     draw();
 
     requestAnimationFrame(gameLoop);
