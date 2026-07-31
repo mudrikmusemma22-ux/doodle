@@ -343,7 +343,7 @@ function update() {
     }
 
 
-    player.worldX += player.dx;  camera.x = player.worldX - canvas.width / 2;
+    player.worldX += player.dx;  player.x = player.worldX;  camera.x = player.worldX - canvas.width / 2;
 
 }
 
