@@ -350,6 +350,7 @@ ctx.moveTo(x + 33, y + 105);
 ctx.lineTo(x + 33 - legMove, y + 145);
 ctx.stroke();
 
+}
 
 // bewegung
 function update(){
