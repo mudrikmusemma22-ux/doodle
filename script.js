@@ -477,13 +477,12 @@ function draw(){
 
     // berge
 
-   drawMountain(
-    100,
+ drawMountain(
+    100 - camera.x,
     canvas.height - 120,
     500,
     300
 );
-
 
 drawMountain(
     800,
