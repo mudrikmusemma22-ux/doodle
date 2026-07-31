@@ -334,6 +334,7 @@ function drawDoodle() {
 
 
 // bewegung
+
 function update() {
 
     if (keys["a"]) {
@@ -347,12 +348,9 @@ function update() {
     }
 
 
+    camera.x = player.x - canvas.width / 2;
 
-    player.worldX += player.dx;  
-player.x = player.worldX;  
-camera.x = player.worldX - canvas.width / 2;
-
-} 
+}
 
 
 function drawBrush(){
