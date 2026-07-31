@@ -245,7 +245,7 @@ function drawMountain(x, y, w, h) {
 
 function drawDoodle(){
 
-    let x = player.x;
+    let x = player.x - camera.x;
     let y = canvas.height - 230;
 
 
@@ -352,16 +352,27 @@ ctx.stroke();
 }
 
 
+// bewegung
+
+function update(){
+
+    if(keys["a"]){
+        player.x -= player.speed;
+    }
+
+    if(keys["d"]){
+        player.x += player.speed;
+    }
 
     camera.x = player.x - canvas.width / 2;
-    
-if(keys["a"] || keys["d"]){
-    player.walkTime += 0.2;
-}
-else{
-    player.walkTime = 0;
-}
 
+    if(keys["a"] || keys["d"]){
+        player.walkTime += 0.2;
+    }else{
+        player.walkTime = 0;
+    }
+
+}
 function drawBrush(){
 
     if(mouse.down && brush){
