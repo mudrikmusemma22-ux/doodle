@@ -334,7 +334,7 @@ function drawDoodle(){
 
     ctx.stroke();
 
-}
+
 
 
 
