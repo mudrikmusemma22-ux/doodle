@@ -335,23 +335,19 @@ function drawDoodle(){
 
 
 // bewegung
-
 function update(){
 
-    if(keys["a"]){
-
-        player.x -= player.speed;
-        console.log("links");
-
-    }
-
-
     if(keys["d"]){
-
-        player.x += player.speed;
-        console.log("rechts");
-
+        player.x = player.x + 20;
+        console.log("D MOVE:", player.x);
     }
+
+    if(keys["a"]){
+        player.x = player.x - 20;
+        console.log("A MOVE:", player.x);
+    }
+
+
 
 
     camera.x = player.x - canvas.width / 2;
