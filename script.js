@@ -23,7 +23,7 @@ resize();
 const player = {
     x: 300,
     worldX: 300,
-    speed: 5,
+    speed: 3,
     dx: 0
 };
 
