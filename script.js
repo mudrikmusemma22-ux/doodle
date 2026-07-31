@@ -477,15 +477,17 @@ function draw(){
 
     // berge
 
- drawMountain(
+
+drawMountain(
     100 - camera.x,
     canvas.height - 120,
     500,
     300
 );
 
+
 drawMountain(
-    800,
+    800 - camera.x,
     canvas.height - 120,
     600,
     400
@@ -493,7 +495,7 @@ drawMountain(
 
 
 drawMountain(
-    1500,
+    1500 - camera.x,
     canvas.height - 120,
     700,
     450
@@ -501,12 +503,11 @@ drawMountain(
 
 
 drawMountain(
-    2400,
+    2400 - camera.x,
     canvas.height - 120,
     800,
     500
 );
-
 
     // boden
 
