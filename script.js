@@ -461,7 +461,6 @@ drawBrush();
 // spiel
 
 function gameLoop() 
-
     update();
 
     draw();
