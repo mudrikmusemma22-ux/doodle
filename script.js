@@ -460,7 +460,8 @@ drawBrush();
 
 // spiel
 
-function gameLoop() 
+function gameLoop() {
+
     update();
 
     draw();
