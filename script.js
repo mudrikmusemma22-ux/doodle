@@ -406,8 +406,6 @@ function drawBrush(){
 
     }
 
-}
-
 
 
 // zeichnen
