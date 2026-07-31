@@ -84,14 +84,54 @@ function draw() {
     );
 
 
-    // Doodle (testfigur)
-    ctx.fillStyle = "red";
-    ctx.fillRect(
-        player.x,
-        canvas.height - 180,
-        player.width,
-        player.height
-    );
+    // Doodle der Ritter (Skizzen-Stil)
+
+let doodleX = player.x;
+let doodleY = canvas.height - 180;
+
+// Umhang
+ctx.fillStyle = "#8b3a3a";
+ctx.fillRect(
+    doodleX - 10,
+    doodleY + 15,
+    20,
+    45
+);
+
+// Rüstung
+ctx.fillStyle = "#777";
+ctx.fillRect(
+    doodleX,
+    doodleY + 20,
+    40,
+    40
+);
+
+// Kopf
+ctx.fillStyle = "#d6a77a";
+ctx.beginPath();
+ctx.arc(
+    doodleX + 20,
+    doodleY + 10,
+    15,
+    0,
+    Math.PI * 2
+);
+ctx.fill();
+
+// Schwert
+ctx.strokeStyle = "#222";
+ctx.lineWidth = 4;
+ctx.beginPath();
+ctx.moveTo(
+    doodleX + 40,
+    doodleY + 35
+);
+ctx.lineTo(
+    doodleX + 60,
+    doodleY + 10
+);
+ctx.stroke();
 
 
     // Position anzeigen
