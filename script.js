@@ -342,6 +342,14 @@ function drawDoodle(){
 
 function update() {
 
+ if(keys["d"]){
+        player.x += 5;
+    }
+
+    console.log(player.x);
+
+}
+    
     if (keys["a"]) {
         player.x -= 5;
         console.log("links");
