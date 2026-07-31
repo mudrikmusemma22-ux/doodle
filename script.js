@@ -14,8 +14,10 @@ resize();
 // spiel
 
 function update() {
-
-}
+const player = {
+    x: 300,
+    y: 300
+};
 
 function draw() {
 
