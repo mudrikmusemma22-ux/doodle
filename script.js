@@ -346,12 +346,16 @@ function update() {
         console.log("rechts");
     }
 
-}
 
-    player.worldX += player.dx;  player.x = player.worldX;  camera.x = player.worldX - canvas.width / 2;
 
-}
+    player.worldX += player.dx;  
+player.x = player.worldX;  
+camera.x = player.worldX - canvas.width / 2;
 
+} 
+
+
+function drawBrush(){
 function drawBrush(){
 
     if(mouse.down && brush){
