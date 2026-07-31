@@ -336,17 +336,20 @@ function drawDoodle(){
 
 // bewegung
 function update(){
+if(keys["a"]){
 
-    if(keys["d"]){
-        player.x += player.speed;
-        console.log("D MOVE:", player.x);
-    }
+    player.x -= player.speed;
+    console.log("links");
 
-    if(keys["a"]){
-        player.x += player.speed;
-        console.log("A MOVE:", player.x);
-    }
+}
 
+
+if(keys["d"]){
+
+    player.x += player.speed;
+    console.log("rechts");
+
+}
 
 
 
