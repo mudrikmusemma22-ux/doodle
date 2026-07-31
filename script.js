@@ -409,24 +409,6 @@ function drawBrush(){
 }
 
 
-    ctx.fillStyle = "#c83b3b";
-
-
-    for(let d of drawings){
-
-        ctx.beginPath();
-
-        ctx.arc(
-            d.x,
-            d.y,
-            6,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-
 
 // zeichnen
 
