@@ -375,7 +375,6 @@ function drawBrush(){
 
         });
 
-    }
 
 
     for(let d of drawings){
