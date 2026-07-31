@@ -329,18 +329,44 @@ function draw() {
 
     // Helm
 
-    ctx.fillStyle = "#aaa";
+   // Helm
 
-    ctx.beginPath();
+ctx.fillStyle = "#aaa";
 
-    ctx.arc(
-        x + 20,
-        y + 20,
-        22,
-        0,
-        Math.PI * 2
-    );
+ctx.beginPath();
 
+ctx.arc(
+    x + 20,
+    y + 20,
+    25,
+    Math.PI,
+    Math.PI * 2
+);
+
+ctx.fill();
+
+
+// Helm seiten
+
+ctx.fillRect(
+    x - 5,
+    y + 15,
+    50,
+    15
+);
+
+
+// Visier
+
+ctx.fillStyle = "#333";
+
+ctx.fillRect(
+    x + 5,
+    y + 20,
+    30,
+    6
+);
+    
     ctx.fill();
     
 // Helm Rand (Buntstift-Linie)
