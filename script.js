@@ -447,9 +447,9 @@ function draw() {
 
     drawDoodle();
 
-    drawSnow();
+   drawSnow();
 
-}
+drawBrush();
 
 
 
