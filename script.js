@@ -1,6 +1,7 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
+
 // Bildschirmgröße
 function resize() {
     canvas.width = window.innerWidth;
@@ -12,6 +13,7 @@ resize();
 
 
 // Spieler
+
 const player = {
     x: 100,
     width: 40,
@@ -20,7 +22,15 @@ const player = {
 };
 
 
+// Kamera
+
+const camera = {
+    x: 0
+};
+
+
 // Tasten
+
 const keys = {};
 
 window.addEventListener("keydown", (e) => {
@@ -32,24 +42,83 @@ window.addEventListener("keyup", (e) => {
 });
 
 
+// Schneeflocken
+
+let snowflakes = [];
+
+for (let i = 0; i < 100; i++) {
+
+    snowflakes.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 3 + 1,
+        speed: Math.random() * 1 + 0.5
+    });
+
+}
+
+
+function drawSnow() {
+
+    ctx.fillStyle = "#fff4dd";
+
+    for (let snow of snowflakes) {
+
+        ctx.beginPath();
+
+        ctx.arc(
+            snow.x,
+            snow.y,
+            snow.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+
+
+        snow.y += snow.speed;
+
+
+        if (snow.y > canvas.height) {
+            snow.y = -5;
+            snow.x = Math.random() * canvas.width;
+        }
+
+    }
+
+}
+
+
 // Bewegung
+
 function update() {
 
     player.dx = 0;
+
 
     if (keys["a"] || keys["arrowleft"]) {
         player.dx = -player.speed;
     }
 
+
     if (keys["d"] || keys["arrowright"]) {
         player.dx = player.speed;
     }
 
+
     player.x += player.dx;
+
+
+    // Kamera folgt
+
+    camera.x = player.x - 300;
+
 }
 
 
 // Wolken
+
 function drawCloud(x, y, size) {
 
     ctx.fillStyle = "#f5ead2";
@@ -57,14 +126,30 @@ function drawCloud(x, y, size) {
     ctx.beginPath();
 
     ctx.arc(x, y, size, 0, Math.PI * 2);
-    ctx.arc(x + size, y - 10, size * 1.2, 0, Math.PI * 2);
-    ctx.arc(x + size * 2, y, size, 0, Math.PI * 2);
+
+    ctx.arc(
+        x + size,
+        y - 10,
+        size * 1.2,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.arc(
+        x + size * 2,
+        y,
+        size,
+        0,
+        Math.PI * 2
+    );
 
     ctx.fill();
+
 }
 
 
 // Berge
+
 function drawMountain(x, y, width, height) {
 
     ctx.fillStyle = "#b8a58a";
@@ -88,7 +173,8 @@ function drawMountain(x, y, width, height) {
     ctx.fill();
 
 
-    // Schnee auf Berg
+    // Schnee oben
+
     ctx.fillStyle = "#fff4dd";
 
     ctx.beginPath();
@@ -111,14 +197,16 @@ function drawMountain(x, y, width, height) {
     ctx.closePath();
 
     ctx.fill();
+
 }
 
 
 // Zeichnen
+
 function draw() {
 
 
-    // golden brown Himmel
+    // Himmel
 
     let sky = ctx.createLinearGradient(
         0,
@@ -127,11 +215,14 @@ function draw() {
         canvas.height
     );
 
+
     sky.addColorStop(0, "#a87545");
     sky.addColorStop(0.5, "#d2a66c");
     sky.addColorStop(1, "#f0dfbd");
 
+
     ctx.fillStyle = sky;
+
 
     ctx.fillRect(
         0,
@@ -141,29 +232,46 @@ function draw() {
     );
 
 
-    // Wolken
+    // Wolken mit Kamera
 
-   drawCloud(200, 200, 50);
-drawCloud(600, 250, 60);
-drawCloud(1000, 150, 50);
+    drawCloud(
+        150 - camera.x * 0.2,
+        120,
+        30
+    );
+
+    drawCloud(
+        600 - camera.x * 0.2,
+        160,
+        45
+    );
 
 
+    drawCloud(
+        1000 - camera.x * 0.2,
+        100,
+        35
+    );
 
-   // Berge
 
-drawMountain(
-    50,
-    canvas.height - 120,
-    500,
-    250
-);
+    // Berge mit Kamera
 
-drawMountain(
-    650,
-    canvas.height - 120,
-    600,
-    350
-);
+    drawMountain(
+        50 - camera.x,
+        canvas.height - 120,
+        500,
+        250
+    );
+
+
+    drawMountain(
+        650 - camera.x,
+        canvas.height - 120,
+        600,
+        350
+    );
+
+
     // Schnee Boden
 
     ctx.fillStyle = "#e8dfc8";
@@ -176,9 +284,10 @@ drawMountain(
     );
 
 
+
     // Doodle Ritter
 
-    let x = player.x;
+    let x = player.x - camera.x;
     let y = canvas.height - 200;
 
 
@@ -197,6 +306,7 @@ drawMountain(
     ctx.fill();
 
 
+
     // Rüstung
 
     ctx.fillStyle = "#777";
@@ -207,6 +317,7 @@ drawMountain(
         40,
         50
     );
+
 
 
     // Helm
@@ -225,17 +336,6 @@ drawMountain(
 
     ctx.fill();
 
-
-    // Visier
-
-    ctx.fillStyle = "#333";
-
-    ctx.fillRect(
-        x + 5,
-        y + 15,
-        30,
-        6
-    );
 
 
     // Schwert
@@ -258,16 +358,11 @@ drawMountain(
     ctx.stroke();
 
 
-    // Testanzeige
 
-    ctx.fillStyle = "#000";
-    ctx.font = "20px Arial";
+    // Schnee
 
-    ctx.fillText(
-        "doodle x: " + Math.floor(player.x),
-        20,
-        40
-    );
+    drawSnow();
+
 
 }
 
