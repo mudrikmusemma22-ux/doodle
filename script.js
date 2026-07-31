@@ -143,27 +143,26 @@ function draw() {
 
     // Wolken
 
-    drawCloud(150, 120, 30);
-    drawCloud(600, 160, 45);
-    drawCloud(1000, 100, 35);
+   drawCloud(200, 200, 50);
+drawCloud(600, 250, 60);
+drawCloud(1000, 150, 50);
 
 
     // Berge
 
     drawMountain(
-        50,
-        canvas.height - 120,
-        500,
-        300
-    );
+    50,
+    canvas.height - 250,
+    500,
+    400
+);
 
-    drawMountain(
-        650,
-        canvas.height - 120,
-        600,
-        400
-    );
-
+drawMountain(
+    650,
+    canvas.height - 250,
+    600,
+    500
+);
 
     // Schnee Boden
 
