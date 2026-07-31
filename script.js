@@ -426,7 +426,6 @@ function drawBrush(){
 
         ctx.fill();
 
-    }
 
 
 // zeichnen
@@ -473,21 +472,36 @@ function draw(){
 
     // berge
 
-    drawMountain(
-        100,
-        canvas.height - 120,
-        500,
-        300
-    );
+   drawMountain(
+    100,
+    canvas.height - 120,
+    500,
+    300
+);
 
 
-    drawMountain(
-        800,
-        canvas.height - 120,
-        600,
-        400
-    );
+drawMountain(
+    800,
+    canvas.height - 120,
+    600,
+    400
+);
 
+
+drawMountain(
+    1500,
+    canvas.height - 120,
+    700,
+    450
+);
+
+
+drawMountain(
+    2400,
+    canvas.height - 120,
+    800,
+    500
+);
 
 
     // boden
