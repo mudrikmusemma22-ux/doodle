@@ -356,7 +356,6 @@ camera.x = player.worldX - canvas.width / 2;
 
 
 function drawBrush(){
-function drawBrush(){
 
     if(mouse.down && brush){
 
