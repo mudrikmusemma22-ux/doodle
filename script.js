@@ -449,13 +449,13 @@ function draw(){
     );
 
 
+drawDoodle();
 
-    drawDoodle();
-
-   drawSnow();
+drawSnow();
 
 drawBrush();
 
+}
 
 
 // spiel
