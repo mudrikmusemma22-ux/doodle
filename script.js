@@ -417,6 +417,7 @@ function drawBrush(){
     }
 
 }
+
 // zeichnen
 
 function draw(){
