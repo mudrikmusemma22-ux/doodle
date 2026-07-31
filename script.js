@@ -116,6 +116,65 @@ drawCloud(200, 120, 30);
 drawCloud(600, 180, 45);
 drawCloud(1000, 100, 35);
 
+    
+    // Berge (gemalter Stil)
+
+function drawMountain(x, y, width, height) {
+
+    // Berg
+    ctx.fillStyle = "#b8a58a";
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(
+        x + width / 2,
+        y - height
+    );
+    ctx.lineTo(
+        x + width,
+        y
+    );
+    ctx.closePath();
+    ctx.fill();
+
+
+    // Schnee auf der Spitze
+    ctx.fillStyle = "#fff4dd";
+
+    ctx.beginPath();
+    ctx.moveTo(
+        x + width / 2,
+        y - height
+    );
+    ctx.lineTo(
+        x + width / 2 - 40,
+        y - height + 60
+    );
+    ctx.lineTo(
+        x + width / 2 + 40,
+        y - height + 60
+    );
+    ctx.closePath();
+
+    ctx.fill();
+}
+
+
+// hintergrund berge
+
+drawMountain(
+    100,
+    canvas.height - 120,
+    500,
+    300
+);
+
+drawMountain(
+    700,
+    canvas.height - 120,
+    600,
+    400
+);
     // Doodle Ritter
 
     let x = player.x;
