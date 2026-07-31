@@ -402,12 +402,13 @@ function drawBrush(){
         );
 
 
-        ctx.stroke();
+            ctx.stroke();
 
     }
 
+}
 
-
+ 
 // zeichnen
 
 function draw(){
