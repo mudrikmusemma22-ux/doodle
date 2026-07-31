@@ -28,16 +28,23 @@ const player = {
 };
 
 
-// tasten
+// tasten test
 
 const keys = {};
 
 window.addEventListener("keydown", (e) => {
+
+    console.log("gedrückt:", e.key);
+
     keys[e.key.toLowerCase()] = true;
+
 });
 
+
 window.addEventListener("keyup", (e) => {
+
     keys[e.key.toLowerCase()] = false;
+
 });
 
 // pinsel
