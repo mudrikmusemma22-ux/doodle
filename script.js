@@ -245,7 +245,7 @@ function drawMountain(x, y, w, h) {
 
 function drawDoodle(){
 
-    let x = player.x - camera.x;
+   let x = canvas.width / 2;
     let y = canvas.height - 230;
 
 
