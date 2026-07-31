@@ -22,6 +22,7 @@ resize();
 
 const player = {
     x: 300,
+    worldX: 300,
     speed: 5,
     dx: 0
 };
@@ -342,7 +343,7 @@ function update() {
     }
 
 
-    player.x += player.dx;
+    player.worldX += player.dx;  camera.x = player.worldX - canvas.width / 2;
 
 }
 
