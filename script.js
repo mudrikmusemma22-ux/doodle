@@ -386,5 +386,6 @@ function gameLoop(){
 
 }
 
+console.log("doodle läuft");
 
 gameLoop();
