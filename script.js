@@ -23,10 +23,10 @@ resize();
 const player = {
     x: 300,
     worldX: 300,
-    speed: 3,
-    dx: 0
-};
-
+    speed: 5,
+    dx: 0,
+    walkTime: 0
+};  
 
 // tasten test
 
@@ -351,7 +351,12 @@ function update(){
 
 
     camera.x = player.x - canvas.width / 2;
-
+    
+if(keys["a"] || keys["d"]){
+    player.walkTime += 0.2;
+}
+else{
+    player.walkTime = 0;
 }
 
 function drawBrush(){
