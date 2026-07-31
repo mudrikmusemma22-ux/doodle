@@ -348,11 +348,59 @@ function drawBrush(){
         drawings.push({
 
             x: mouse.x,
-            y: mouse.y
+            y: mouse.y,
+            size: Math.random() * 4 + 3
 
         });
 
     }
+
+
+    for(let d of drawings){
+
+        // hauptstrich
+
+        ctx.fillStyle = "rgba(190,40,40,0.7)";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            d.x,
+            d.y,
+            d.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+
+
+
+        // kleine buntstift kratzer
+
+        ctx.strokeStyle = "rgba(120,20,20,0.35)";
+        ctx.lineWidth = 1;
+
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            d.x - 4,
+            d.y - 4
+        );
+
+
+        ctx.lineTo(
+            d.x + 6,
+            d.y + 5
+        );
+
+
+        ctx.stroke();
+
+    }
+
+}
 
 
     ctx.fillStyle = "#c83b3b";
