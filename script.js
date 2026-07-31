@@ -331,7 +331,24 @@ function drawDoodle(){
 
 }
 
+// beine
 
+let legMove = Math.sin(player.walkTime) * 8;
+
+ctx.strokeStyle = "#555";
+ctx.lineWidth = 8;
+ctx.lineCap = "round";
+
+ctx.beginPath();
+ctx.moveTo(x + 12, y + 105);
+ctx.lineTo(x + 12 + legMove, y + 145);
+ctx.stroke();
+
+
+ctx.beginPath();
+ctx.moveTo(x + 33, y + 105);
+ctx.lineTo(x + 33 - legMove, y + 145);
+ctx.stroke();
 
 
 // bewegung
