@@ -173,32 +173,39 @@ function drawMountain(x, y, width, height) {
     ctx.fill();
 
 
-    // Schnee oben
+   
+}// Schnee auf dem Berg (gemalter Stil)
 
-    ctx.fillStyle = "#fff4dd";
+ctx.fillStyle = "#fff4dd";
 
-    ctx.beginPath();
+ctx.beginPath();
 
-    ctx.moveTo(
-        x + width / 2,
-        y - height
-    );
+ctx.moveTo(
+    x + width / 2,
+    y - height
+);
 
-    ctx.lineTo(
-        x + width / 2 - 45,
-        y - height + 70
-    );
+// linke Schneekante
+ctx.lineTo(
+    x + width / 2 - 80,
+    y - height + 100
+);
 
-    ctx.lineTo(
-        x + width / 2 + 45,
-        y - height + 70
-    );
+// kleine Welle
+ctx.lineTo(
+    x + width / 2 - 35,
+    y - height + 80
+);
 
-    ctx.closePath();
+// rechte Schneekante
+ctx.lineTo(
+    x + width / 2 + 70,
+    y - height + 120
+);
 
-    ctx.fill();
+ctx.closePath();
 
-}
+ctx.fill();
 
 
 // Zeichnen
@@ -335,7 +342,23 @@ function draw() {
     );
 
     ctx.fill();
+    
+// Helm Rand (Buntstift-Linie)
 
+ctx.strokeStyle = "#333";
+ctx.lineWidth = 3;
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 20,
+    y + 20,
+    22,
+    0,
+    Math.PI * 2
+);
+
+ctx.stroke();
 
 
     // Schwert
