@@ -380,6 +380,8 @@ ctx.fill();
 
 // klinge
 
+return;
+    
 ctx.fillStyle = "#d9dde2";
 
 ctx.beginPath();
