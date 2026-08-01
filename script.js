@@ -374,10 +374,9 @@ ctx.arc(
 );
 ctx.fill();
     
-// ===== episches ritter schwert =====
 
 
-// ===== neues ritter schwert =====
+// ===== kleines ritter schwert =====
 
 // klinge
 
@@ -385,42 +384,26 @@ ctx.fillStyle = "#d9dde2";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 42, y + 75);
-ctx.lineTo(x + 72, y + 38);
-ctx.lineTo(x + 78, y + 15);
-ctx.lineTo(x + 78, y + 70);
+ctx.moveTo(x + 35, y + 75);
+ctx.lineTo(x + 55, y + 45);
+ctx.lineTo(x + 62, y + 30);
+ctx.lineTo(x + 58, y + 80);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// dunkle kante
+// schattenseite
 
 ctx.fillStyle = "#8d969e";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 78, y + 15);
-ctx.lineTo(x + 85, y + 22);
-ctx.lineTo(x + 85, y + 75);
-ctx.lineTo(x + 78, y + 70);
-
-ctx.closePath();
-
-ctx.fill();
-
-
-// klingen glanz
-
-ctx.fillStyle = "#ffffff";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 50, y + 70);
-ctx.lineTo(x + 72, y + 40);
-ctx.lineTo(x + 72, y + 60);
-ctx.lineTo(x + 58, y + 75);
+ctx.moveTo(x + 62, y + 30);
+ctx.lineTo(x + 68, y + 38);
+ctx.lineTo(x + 63, y + 80);
+ctx.lineTo(x + 58, y + 80);
 
 ctx.closePath();
 
@@ -430,13 +413,12 @@ ctx.fill();
 // parierstange
 
 ctx.strokeStyle = "#d4a72c";
-ctx.lineWidth = 5;
-ctx.lineCap = "round";
+ctx.lineWidth = 6;
 
 ctx.beginPath();
 
-ctx.moveTo(x + 35, y + 78);
-ctx.lineTo(x + 65, y + 78);
+ctx.moveTo(x + 28, y + 82);
+ctx.lineTo(x + 65, y + 82);
 
 ctx.stroke();
 
@@ -444,12 +426,12 @@ ctx.stroke();
 // griff
 
 ctx.strokeStyle = "#6b3f1e";
-ctx.lineWidth = 7;
+ctx.lineWidth = 6;
 
 ctx.beginPath();
 
-ctx.moveTo(x + 50, y + 80);
-ctx.lineTo(x + 50, y + 95);
+ctx.moveTo(x + 48, y + 83);
+ctx.lineTo(x + 48, y + 98);
 
 ctx.stroke();
 
@@ -461,26 +443,9 @@ ctx.fillStyle = "#f5c542";
 ctx.beginPath();
 
 ctx.arc(
-    x + 50,
-    y + 98,
+    x + 48,
+    y + 101,
     4,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();
-
-
-// kleiner glanz
-
-ctx.fillStyle = "#dfffff";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 75,
-    y + 20,
-    2,
     0,
     Math.PI * 2
 );
