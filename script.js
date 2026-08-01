@@ -367,26 +367,63 @@ ctx.arc(
 
 ctx.fill();
 
-  // schwert
+// ===== klinge =====
 
-ctx.strokeStyle = "#222";
+ctx.strokeStyle = "#d9dde2";
+ctx.lineWidth = 4;
 
+ctx.beginPath();
+ctx.moveTo(x + 45, y + 68);
+ctx.lineTo(x + 82, y + 22);
+ctx.stroke();
+
+
+// glanz
+
+ctx.strokeStyle = "#ffffff";
+ctx.lineWidth = 1;
+
+ctx.beginPath();
+ctx.moveTo(x + 46, y + 68);
+ctx.lineTo(x + 78, y + 27);
+ctx.stroke();
+
+
+// parierstange
+
+ctx.strokeStyle = "#8a6b2d";
 ctx.lineWidth = 5;
 
 ctx.beginPath();
-
-ctx.moveTo(
-    x + 45,
-    y + 70
-);
-
-ctx.lineTo(
-    x + 85,
-    y + 20
-);
-
+ctx.moveTo(x + 39, y + 71);
+ctx.lineTo(x + 51, y + 63);
 ctx.stroke();
 
+
+// griff
+
+ctx.strokeStyle = "#5a3d20";
+ctx.lineWidth = 4;
+
+ctx.beginPath();
+ctx.moveTo(x + 45, y + 70);
+ctx.lineTo(x + 52, y + 79);
+ctx.stroke();
+
+
+// knauf
+
+ctx.fillStyle = "#d8b55b";
+
+ctx.beginPath();
+ctx.arc(
+    x + 53,
+    y + 80,
+    3,
+    0,
+    Math.PI * 2
+);
+ctx.fill();
 
 // beine
 
