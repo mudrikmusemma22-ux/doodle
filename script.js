@@ -375,86 +375,130 @@ ctx.arc(
 );
 ctx.fill();
     
-// ===== richtige klinge =====
+// ===== episches ritter schwert =====
 
-ctx.fillStyle = "#d9dde2";
+
+// klinge hauptteil
+
+ctx.fillStyle = "#cfd6dc";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 50, y + 70);
-ctx.lineTo(x + 95, y + 15);
-ctx.lineTo(x + 88, y + 80);
+ctx.moveTo(x + 48, y + 75);
+ctx.lineTo(x + 100, y + 10);
+ctx.lineTo(x + 88, y + 82);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// dunkle seite der klinge
+// dunkle metallseite
 
-ctx.fillStyle = "#9ca4ab";
+ctx.fillStyle = "#7f8790";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 88, y + 80);
-ctx.lineTo(x + 95, y + 15);
-ctx.lineTo(x + 100, y + 25);
-ctx.lineTo(x + 55, y + 75);
+ctx.moveTo(x + 100, y + 10);
+ctx.lineTo(x + 108, y + 25);
+ctx.lineTo(x + 88, y + 82);
+ctx.lineTo(x + 82, y + 70);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// klingen glanz
+// heller glanz auf klinge
 
 ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 58, y + 65);
-ctx.lineTo(x + 88, y + 25);
-ctx.lineTo(x + 85, y + 45);
-ctx.lineTo(x + 62, y + 70);
+ctx.moveTo(x + 58, y + 70);
+ctx.lineTo(x + 92, y + 25);
+ctx.lineTo(x + 86, y + 55);
+ctx.lineTo(x + 65, y + 76);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// spitze
+// mittelstreifen
 
-ctx.fillStyle = "#eef2f5";
+ctx.strokeStyle = "#aab2b8";
+ctx.lineWidth = 2;
 
 ctx.beginPath();
 
-ctx.moveTo(x + 95, y + 15);
-ctx.lineTo(x + 88, y + 35);
-ctx.lineTo(x + 100, y + 25);
+ctx.moveTo(x + 70, y + 72);
+ctx.lineTo(x + 96, y + 25);
 
-ctx.closePath();
+ctx.stroke();
 
-ctx.fill();
-// beine
 
-let legMove = Math.sin(player.walkTime) * 8;
+// parierstange gold
 
-ctx.strokeStyle = "#555";
-ctx.lineWidth = 8;
+ctx.strokeStyle = "#d4a72c";
+ctx.lineWidth = 7;
 ctx.lineCap = "round";
 
 ctx.beginPath();
-ctx.moveTo(x + 12, y + 105);
-ctx.lineTo(x + 12 + legMove, y + 145);
+
+ctx.moveTo(x + 43, y + 78);
+ctx.lineTo(x + 65, y + 60);
+
 ctx.stroke();
 
+
+// ledergriff
+
+ctx.strokeStyle = "#6b3f1e";
+ctx.lineWidth = 8;
 
 ctx.beginPath();
-ctx.moveTo(x + 33, y + 105);
-ctx.lineTo(x + 33 - legMove, y + 145);
+
+ctx.moveTo(x + 55, y + 82);
+ctx.lineTo(x + 65, y + 95);
+
 ctx.stroke();
 
-}
+
+// goldener knauf
+
+ctx.fillStyle = "#f5c542";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 67,
+    y + 98,
+    5,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();
+
+
+// kleiner magischer glanz
+
+ctx.fillStyle = "#dfffff";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 96,
+    y + 18,
+    3,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();
+
+} 
 
 
 // bewegung
