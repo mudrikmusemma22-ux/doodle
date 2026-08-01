@@ -390,22 +390,6 @@ ctx.closePath();
 ctx.fill();
 
 
-// glanz
-
-ctx.fillStyle = "#ffffff";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 55, y + 75);
-ctx.lineTo(x + 92, y + 20);
-ctx.lineTo(x + 82, y + 55);
-ctx.lineTo(x + 65, y + 80);
-
-ctx.closePath();
-
-ctx.fill();
-
-
 // goldene parierstange
 
 ctx.strokeStyle = "#e6b83f";
