@@ -616,17 +616,37 @@ for(let m of mountains){
     );
 
 }
-    // boden
+   // schnee
 
-    ctx.fillStyle = "#e8dfc8";
+ctx.fillStyle = "#fdf8ef";
 
-    ctx.fillRect(
-        0,
+ctx.fillRect(
+    0,
+    canvas.height - 120,
+    canvas.width,
+    120
+);
+
+
+// kleine schneehügel
+
+ctx.fillStyle = "#fffdf8";
+
+for(let i = -50; i < canvas.width + 50; i += 35){
+
+    ctx.beginPath();
+
+    ctx.arc(
+        i,
         canvas.height - 120,
-        canvas.width,
-        120
+        20,
+        Math.PI,
+        0
     );
 
+    ctx.fill();
+
+}
 
 drawDoodle();
 
