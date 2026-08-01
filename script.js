@@ -628,25 +628,32 @@ ctx.fillRect(
 );
 
 
-// kleine schneehügel
+// natürliche schneekante
 
 ctx.fillStyle = "#fffdf8";
 
-for(let i = -50; i < canvas.width + 50; i += 35){
+ctx.beginPath();
 
-    ctx.beginPath();
+ctx.moveTo(0, canvas.height - 120);
 
-    ctx.arc(
-        i,
-        canvas.height - 120,
-        20,
-        Math.PI,
-        0
+for(let x = 0; x <= canvas.width; x += 40){
+
+    let hill = Math.random() * 15;
+
+    ctx.lineTo(
+        x,
+        canvas.height - 120 - hill
     );
 
-    ctx.fill();
-
 }
+
+ctx.lineTo(canvas.width, canvas.height);
+ctx.lineTo(0, canvas.height);
+
+ctx.closePath();
+ctx.fill();
+
+
 
 drawDoodle();
 
