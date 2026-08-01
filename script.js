@@ -381,7 +381,7 @@ function update(){
 
     for(let m of mountains){
 
-        if(m.x - camera.x < -1000){
+        if(m.x - camera.x < -0){
 
             m.x += 3000;
 
