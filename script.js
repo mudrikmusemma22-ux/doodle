@@ -377,6 +377,19 @@ function update(){
 
     camera.x = player.x - canvas.width / 2;
 
+// berg loop
+
+    for(let m of mountains){
+
+        if(m.x - camera.x < -1000){
+
+            m.x += 3000;
+
+        }
+
+    }
+
+    
     if(keys["a"] || keys["d"]){
         player.walkTime += 0.2;
     }else{
