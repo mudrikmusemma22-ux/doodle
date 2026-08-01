@@ -410,14 +410,59 @@ ctx.stroke();
 
 // griff
 
-ctx.strokeStyle = "#5a3d20";
+ctx.strokeStyle = "#8b5a2b";
+ctx.lineWidth = 6;
+
+ctx.beginPath();
+ctx.moveTo(x + 70, y + 28);
+ctx.lineTo(x + 79, y + 19);
+ctx.stroke();
+
+
+// goldener knauf
+
+ctx.fillStyle = "#f4c542";
+
+ctx.beginPath();
+ctx.arc(
+    x + 79,
+    y + 19,
+    4,
+    0,
+    Math.PI * 2
+);
+ctx.fill();
+
+
+// goldene parierstange
+
+ctx.strokeStyle = "#e0b030";
 ctx.lineWidth = 4;
 
 ctx.beginPath();
-ctx.moveTo(x + 45, y + 70);
-ctx.lineTo(x + 52, y + 79);
+ctx.moveTo(x + 65, y + 33);
+ctx.lineTo(x + 75, y + 23);
 ctx.stroke();
 
+ctx.beginPath();
+ctx.moveTo(x + 73, y + 41);
+ctx.lineTo(x + 83, y + 31);
+ctx.stroke();
+
+
+// kleiner glanz
+
+ctx.fillStyle = "#fff4b0";
+
+ctx.beginPath();
+ctx.arc(
+    x + 78,
+    y + 18,
+    1.5,
+    0,
+    Math.PI * 2
+);
+ctx.fill();
 
 // knauf
 
