@@ -289,65 +289,74 @@ function drawDoodle(){
         55
     );
 
+// ===== helm =====
 
-// =======================
-// HELM
-// =======================
-
-// haupthelm
-ctx.fillStyle = "#cfd3d7";
+// metall
+ctx.fillStyle = "#cfd4d8";
 
 ctx.beginPath();
-ctx.moveTo(x + 6, y + 18);
-ctx.quadraticCurveTo(x + 22, y - 6, x + 39, y + 18);
-ctx.lineTo(x + 45, y + 28);
-ctx.lineTo(x + 45, y + 56);
-ctx.quadraticCurveTo(x + 22, y + 78, x, y + 56);
-ctx.lineTo(x, y + 28);
+ctx.moveTo(x + 8, y + 18);
+ctx.quadraticCurveTo(x + 22, y + 2, x + 36, y + 18);
+ctx.lineTo(x + 42, y + 28);
+ctx.lineTo(x + 42, y + 58);
+ctx.quadraticCurveTo(x + 22, y + 76, x + 2, y + 58);
+ctx.lineTo(x + 2, y + 28);
 ctx.closePath();
 ctx.fill();
 
-// metallrand
-ctx.strokeStyle = "#f5f5f5";
+
+// rechte schattierung
+ctx.fillStyle = "#9aa2a8";
+
+ctx.beginPath();
+ctx.moveTo(x + 22, y + 8);
+ctx.quadraticCurveTo(x + 36, y + 14, x + 42, y + 28);
+ctx.lineTo(x + 42, y + 58);
+ctx.quadraticCurveTo(x + 32, y + 70, x + 22, y + 72);
+ctx.closePath();
+ctx.fill();
+
+
+// outline
+ctx.strokeStyle = "#ffffff";
 ctx.lineWidth = 2;
+
+ctx.beginPath();
+ctx.moveTo(x + 8, y + 18);
+ctx.quadraticCurveTo(x + 22, y + 2, x + 36, y + 18);
+ctx.lineTo(x + 42, y + 28);
+ctx.lineTo(x + 42, y + 58);
+ctx.quadraticCurveTo(x + 22, y + 76, x + 2, y + 58);
+ctx.lineTo(x + 2, y + 28);
+ctx.closePath();
 ctx.stroke();
 
 
-// rechter schatten
-ctx.fillStyle = "#9aa0a6";
-
-ctx.beginPath();
-ctx.moveTo(x + 23, y + 6);
-ctx.lineTo(x + 45, y + 28);
-ctx.lineTo(x + 45, y + 56);
-ctx.quadraticCurveTo(x + 35, y + 70, x + 23, y + 74);
-ctx.closePath();
-ctx.fill();
-
-
 // visier
-ctx.fillStyle = "#303236";
+ctx.fillStyle = "#202020";
 
 ctx.beginPath();
-ctx.moveTo(x + 6, y + 31);
-ctx.lineTo(x + 39, y + 31);
-ctx.lineTo(x + 36, y + 46);
-ctx.lineTo(x + 9, y + 46);
-ctx.closePath();
+ctx.roundRect(
+    x + 8,
+    y + 30,
+    28,
+    12,
+    3
+);
 ctx.fill();
 
 
 // schlitze
-ctx.strokeStyle = "#b8bec4";
+ctx.strokeStyle = "#7f8790";
 ctx.lineWidth = 1.5;
 
 for(let i = 0; i < 4; i++){
 
-    let sx = x + 11 + i * 6;
+    let sx = x + 13 + i * 5;
 
     ctx.beginPath();
-    ctx.moveTo(sx, y + 33);
-    ctx.lineTo(sx, y + 44);
+    ctx.moveTo(sx, y + 32);
+    ctx.lineTo(sx, y + 40);
     ctx.stroke();
 
 }
@@ -358,15 +367,14 @@ ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
 ctx.arc(
-    x + 11,
+    x + 12,
     y + 16,
     3,
     0,
     Math.PI * 2
 );
-
 ctx.fill();
-
+    
 // ===== klinge =====
 
 ctx.strokeStyle = "#d9dde2";
