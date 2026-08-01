@@ -385,7 +385,7 @@ function update(){
 
     if(m.x - camera.x < 0){
 
-        m.x += 2200;
+        m.x += 3000;
 
     }
 
