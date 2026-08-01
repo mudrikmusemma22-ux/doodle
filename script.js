@@ -404,15 +404,16 @@ ctx.lineTo(x + 70, y + 88);
 ctx.stroke();
 
 
-// griff
+// seitlicher griff
 
 ctx.strokeStyle = "#5b351c";
 ctx.lineWidth = 9;
+ctx.lineCap = "round";
 
 ctx.beginPath();
 
 ctx.moveTo(x + 52, y + 90);
-ctx.lineTo(x + 52, y + 110);
+ctx.lineTo(x + 30, y + 108);
 
 ctx.stroke();
 
@@ -424,15 +425,14 @@ ctx.fillStyle = "#ffd34e";
 ctx.beginPath();
 
 ctx.arc(
-    x + 52,
-    y + 113,
+    x + 27,
+    y + 111,
     6,
     0,
     Math.PI * 2
 );
 
 ctx.fill();
-
 
 // ===== beine =====
 
