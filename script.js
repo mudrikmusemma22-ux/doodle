@@ -421,16 +421,6 @@ ctx.beginPath();
 ctx.arc(x + 39, y + 101, 4, 0, Math.PI * 2);
 ctx.fill();
 
-// ===== arm =====
-
-ctx.strokeStyle = "#5b351c";
-ctx.lineWidth = 6;
-ctx.lineCap = "round";
-
-ctx.beginPath();
-ctx.moveTo(x + 32, y + 72);
-ctx.lineTo(x + 52, y + 88);
-ctx.stroke();
     
     
 // ===== beine =====
