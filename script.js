@@ -254,6 +254,8 @@ function drawMountain(x, y, w, h) {
 
 /// doodle ritter
 
+alert("neuer doodle code");
+
 function drawDoodle(){
 
    let x = canvas.width / 2;
