@@ -289,21 +289,73 @@ function drawDoodle(){
 
 
 
-    // helm
+    // silber helm
 
-    ctx.fillStyle = "#aaa";
+ctx.fillStyle = "#bfc3c7";
 
-    ctx.beginPath();
+ctx.beginPath();
 
-    ctx.arc(
-        x + 22,
-        y + 35,
-        27,
-        0,
-        Math.PI * 2
-    );
+ctx.arc(
+    x + 22,
+    y + 35,
+    30,
+    0,
+    Math.PI * 2
+);
 
-    ctx.fill();
+ctx.fill();
+
+
+// schatten am helm
+
+ctx.fillStyle = "#7b8085";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 35,
+    y + 45,
+    18,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();
+
+
+// metall rand
+
+ctx.strokeStyle = "#e8edf2";
+ctx.lineWidth = 3;
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 22,
+    y + 35,
+    30,
+    0,
+    Math.PI * 2
+);
+
+ctx.stroke();
+
+
+// kleiner glanz
+
+ctx.fillStyle = "#ffffff";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 12,
+    y + 22,
+    5,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();
 
 
 
