@@ -378,19 +378,17 @@ function update(){
     camera.x = player.x - canvas.width / 2;
 
 // berg loop
+    
+for(let m of mountains){
 
-    for(let m of mountains){
+    if(m.x - camera.x < -800){
 
-   // console.log(m.x - camera.x);
-
-    if(m.x - camera.x < 0){
-
-        m.x += 3000;
+        let farthest = Math.max(...mountains.map(b => b.x + b.w));
+        m.x = farthest + 200;
 
     }
 
 }
-
     
     if(keys["a"] || keys["d"]){
         player.walkTime += 0.2;
