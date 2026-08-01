@@ -291,7 +291,7 @@ function drawDoodle(){
 
     // silber helm
 
-ctx.fillStyle = "#bfc3c7";
+ctx.fillStyle = "red";
 
 ctx.beginPath();
 
