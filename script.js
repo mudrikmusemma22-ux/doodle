@@ -291,7 +291,7 @@ function drawDoodle(){
 
 
 
- // helm
+// helm
 
 ctx.fillStyle = "#cfd4d8";
 
