@@ -375,117 +375,66 @@ ctx.arc(
 );
 ctx.fill();
     
-// ===== klinge =====
+// ===== richtige klinge =====
 
-ctx.strokeStyle = "#d9dde2";
-ctx.lineWidth = 4;
+ctx.fillStyle = "#d9dde2";
 
 ctx.beginPath();
-ctx.moveTo(x + 45, y + 68);
-ctx.lineTo(x + 82, y + 22);
-ctx.stroke();
+
+ctx.moveTo(x + 50, y + 70);
+ctx.lineTo(x + 95, y + 15);
+ctx.lineTo(x + 88, y + 80);
+
+ctx.closePath();
+
+ctx.fill();
 
 
-// glanz
+// dunkle seite der klinge
+
+ctx.fillStyle = "#9ca4ab";
+
+ctx.beginPath();
+
+ctx.moveTo(x + 88, y + 80);
+ctx.lineTo(x + 95, y + 15);
+ctx.lineTo(x + 100, y + 25);
+ctx.lineTo(x + 55, y + 75);
+
+ctx.closePath();
+
+ctx.fill();
+
+
+// klingen glanz
 
 ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 51, y + 67);
-ctx.lineTo(x + 82, y + 32);
-ctx.lineTo(x + 79, y + 34);
-ctx.lineTo(x + 49, y + 69);
+ctx.moveTo(x + 58, y + 65);
+ctx.lineTo(x + 88, y + 25);
+ctx.lineTo(x + 85, y + 45);
+ctx.lineTo(x + 62, y + 70);
 
 ctx.closePath();
+
 ctx.fill();
 
-// parierstange
 
-ctx.strokeStyle = "#8a6b2d";
-ctx.lineWidth = 5;
+// spitze
 
-ctx.beginPath();
-ctx.moveTo(x + 39, y + 71);
-ctx.lineTo(x + 51, y + 63);
-ctx.stroke();
-
-//schatten
-    
-ctx.fillStyle = "#9ca4ab";
+ctx.fillStyle = "#eef2f5";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 83, y + 28);
-ctx.lineTo(x + 88, y + 33);
-ctx.lineTo(x + 53, y + 72);
-ctx.lineTo(x + 50, y + 69);
+ctx.moveTo(x + 95, y + 15);
+ctx.lineTo(x + 88, y + 35);
+ctx.lineTo(x + 100, y + 25);
 
 ctx.closePath();
-ctx.fill(); 
 
-//ledergriff
-    
-ctx.strokeStyle = "#7a4d21";
-ctx.lineWidth = 5;
-
-ctx.beginPath();
-ctx.moveTo(x + 55, y + 79);
-ctx.lineTo(x + 48, y + 72);
-ctx.stroke();
-
-// goldener knauf
-
-ctx.fillStyle = "#f4c542";
-
-ctx.beginPath();
-ctx.arc(
-    x + 46,
-    y + 70,
-    3,
-    0,
-    Math.PI * 2
-);
 ctx.fill();
-
-// goldene parierstange
-
-ctx.strokeStyle = "#d9a520";
-ctx.lineWidth = 5;
-
-ctx.beginPath();
-ctx.moveTo(x + 45, y + 71);
-ctx.lineTo(x + 60, y + 58);
-ctx.stroke();
-
-// kleiner glanz
-
-ctx.fillStyle = "#fff4b0";
-
-ctx.beginPath();
-ctx.arc(
-    x + 78,
-    y + 18,
-    1.5,
-    0,
-    Math.PI * 2
-);
-ctx.fill();
-
-// knauf
-
-ctx.fillStyle = "#d8b55b";
-
-ctx.beginPath();
-ctx.arc(
-    x + 53,
-    y + 80,
-    3,
-    0,
-    Math.PI * 2
-);
-ctx.fill();
-
 // beine
 
 let legMove = Math.sin(player.walkTime) * 8;
