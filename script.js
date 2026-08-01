@@ -372,66 +372,53 @@ ctx.arc(
     0,
     Math.PI * 2
 );
-// ===== episches ritter schwert =====
+// ===== schwert =====
+
+ctx.save();
+
+ctx.translate(x + 52, y + 87);
+ctx.rotate(-0.85);
 
 // klinge
-
 ctx.fillStyle = "#dfe6eb";
+ctx.fillRect(0, -5, 78, 10);
 
+// spitze
 ctx.beginPath();
-
-ctx.moveTo(x + 45, y + 82);
-ctx.lineTo(x + 95, y + 5);
-ctx.lineTo(x + 105, y + 15);
-ctx.lineTo(x + 62, y + 90);
-
+ctx.moveTo(78, -5);
+ctx.lineTo(92, 0);
+ctx.lineTo(78, 5);
 ctx.closePath();
-
 ctx.fill();
 
-
-// goldene parierstange
+// parierstange
+ctx.restore();
 
 ctx.strokeStyle = "#e6b83f";
-ctx.lineWidth = 8;
+ctx.lineWidth = 7;
 ctx.lineCap = "round";
 
 ctx.beginPath();
-
-ctx.moveTo(x + 35, y + 88);
-ctx.lineTo(x + 70, y + 88);
-
+ctx.moveTo(x + 42, y + 87);
+ctx.lineTo(x + 63, y + 87);
 ctx.stroke();
 
 
-// seitlicher griff
-
+// griff
 ctx.strokeStyle = "#5b351c";
-ctx.lineWidth = 9;
-ctx.lineCap = "round";
+ctx.lineWidth = 7;
 
 ctx.beginPath();
-
-ctx.moveTo(x + 52, y + 90);
-ctx.lineTo(x + 30, y + 108);
-
+ctx.moveTo(x + 52, y + 87);
+ctx.lineTo(x + 42, y + 98);
 ctx.stroke();
 
 
 // knauf
-
 ctx.fillStyle = "#ffd34e";
 
 ctx.beginPath();
-
-ctx.arc(
-    x + 27,
-    y + 111,
-    6,
-    0,
-    Math.PI * 2
-);
-
+ctx.arc(x + 39, y + 101, 4, 0, Math.PI * 2);
 ctx.fill();
 
 // ===== beine =====
