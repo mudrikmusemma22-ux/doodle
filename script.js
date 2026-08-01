@@ -450,22 +450,6 @@ ctx.arc(
 ctx.fill();
 
 
-// magischer glanz
-
-ctx.fillStyle = "#dfffff";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 98,
-    y + 12,
-    4,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();
-
 // ===== beine =====
 
 let legMove = Math.sin(player.walkTime) * 8;
