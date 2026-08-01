@@ -381,13 +381,15 @@ function update(){
 
     for(let m of mountains){
 
-        if(m.x - camera.x < -0){
+    console.log(m.x - camera.x);
 
-            m.x += 3000;
+    if(m.x - camera.x < 0){
 
-        }
+        m.x += 3000;
 
     }
+
+}
 
     
     if(keys["a"] || keys["d"]){
