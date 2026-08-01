@@ -388,14 +388,17 @@ ctx.stroke();
 
 // glanz
 
-ctx.strokeStyle = "#ffffff";
-ctx.lineWidth = 1;
+ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
-ctx.moveTo(x + 46, y + 68);
-ctx.lineTo(x + 78, y + 27);
-ctx.stroke();
 
+ctx.moveTo(x + 51, y + 67);
+ctx.lineTo(x + 82, y + 32);
+ctx.lineTo(x + 79, y + 34);
+ctx.lineTo(x + 49, y + 69);
+
+ctx.closePath();
+ctx.fill();
 
 // parierstange
 
@@ -407,17 +410,29 @@ ctx.moveTo(x + 39, y + 71);
 ctx.lineTo(x + 51, y + 63);
 ctx.stroke();
 
-
-// griff
-
-ctx.strokeStyle = "#8b5a2b";
-ctx.lineWidth = 6;
+//schatten
+    
+ctx.fillStyle = "#9ca4ab";
 
 ctx.beginPath();
-ctx.moveTo(x + 70, y + 28);
-ctx.lineTo(x + 79, y + 19);
-ctx.stroke();
 
+ctx.moveTo(x + 83, y + 28);
+ctx.lineTo(x + 88, y + 33);
+ctx.lineTo(x + 53, y + 72);
+ctx.lineTo(x + 50, y + 69);
+
+ctx.closePath();
+ctx.fill(); 
+
+//ledergriff
+    
+ctx.strokeStyle = "#7a4d21";
+ctx.lineWidth = 5;
+
+ctx.beginPath();
+ctx.moveTo(x + 55, y + 79);
+ctx.lineTo(x + 48, y + 72);
+ctx.stroke();
 
 // goldener knauf
 
@@ -425,30 +440,23 @@ ctx.fillStyle = "#f4c542";
 
 ctx.beginPath();
 ctx.arc(
-    x + 79,
-    y + 19,
-    4,
+    x + 46,
+    y + 70,
+    3,
     0,
     Math.PI * 2
 );
 ctx.fill();
 
-
 // goldene parierstange
 
-ctx.strokeStyle = "#e0b030";
-ctx.lineWidth = 4;
+ctx.strokeStyle = "#d9a520";
+ctx.lineWidth = 5;
 
 ctx.beginPath();
-ctx.moveTo(x + 65, y + 33);
-ctx.lineTo(x + 75, y + 23);
+ctx.moveTo(x + 45, y + 71);
+ctx.lineTo(x + 60, y + 58);
 ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(x + 73, y + 41);
-ctx.lineTo(x + 83, y + 31);
-ctx.stroke();
-
 
 // kleiner glanz
 
