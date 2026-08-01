@@ -390,22 +390,6 @@ ctx.closePath();
 ctx.fill();
 
 
-// dunkle seite
-
-ctx.fillStyle = "#7c858d";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 95, y + 5);
-ctx.lineTo(x + 105, y + 15);
-ctx.lineTo(x + 62, y + 90);
-ctx.lineTo(x + 55, y + 82);
-
-ctx.closePath();
-
-ctx.fill();
-
-
 // glanz
 
 ctx.fillStyle = "#ffffff";
