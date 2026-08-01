@@ -290,78 +290,81 @@ function drawDoodle(){
     );
 
 
+// =======================
+// HELM
+// =======================
 
-// helm
-
-ctx.fillStyle = "#cfd4d8";
-
-ctx.beginPath();
-ctx.moveTo(x + 5, y + 18);
-ctx.quadraticCurveTo(x + 22, y - 2, x + 40, y + 18);
-ctx.lineTo(x + 47, y + 30);
-ctx.lineTo(x + 47, y + 58);
-ctx.quadraticCurveTo(x + 22, y + 82, x - 3, y + 58);
-ctx.lineTo(x - 3, y + 30);
-ctx.closePath();
-ctx.fill();
-
-
-// rechter schatten
-
-ctx.fillStyle = "#9da4aa";
+// haupthelm
+ctx.fillStyle = "#cfd3d7";
 
 ctx.beginPath();
-ctx.moveTo(x + 22, y + 8);
-ctx.lineTo(x + 47, y + 30);
-ctx.lineTo(x + 47, y + 58);
-ctx.quadraticCurveTo(x + 35, y + 72, x + 22, y + 75);
+ctx.moveTo(x + 6, y + 18);
+ctx.quadraticCurveTo(x + 22, y - 6, x + 39, y + 18);
+ctx.lineTo(x + 45, y + 28);
+ctx.lineTo(x + 45, y + 56);
+ctx.quadraticCurveTo(x + 22, y + 78, x, y + 56);
+ctx.lineTo(x, y + 28);
 ctx.closePath();
 ctx.fill();
-
 
 // metallrand
-
-ctx.strokeStyle = "#f7f8fa";
-ctx.lineWidth = 2.5;
+ctx.strokeStyle = "#f5f5f5";
+ctx.lineWidth = 2;
 ctx.stroke();
 
 
-// visier
-
-ctx.fillStyle = "#50555b";
+// rechter schatten
+ctx.fillStyle = "#9aa0a6";
 
 ctx.beginPath();
-ctx.roundRect(
-    x + 4,
-    y + 31,
-    36,
-    12,
-    4
-);
+ctx.moveTo(x + 23, y + 6);
+ctx.lineTo(x + 45, y + 28);
+ctx.lineTo(x + 45, y + 56);
+ctx.quadraticCurveTo(x + 35, y + 70, x + 23, y + 74);
+ctx.closePath();
+ctx.fill();
+
+
+// visier
+ctx.fillStyle = "#303236";
+
+ctx.beginPath();
+ctx.moveTo(x + 6, y + 31);
+ctx.lineTo(x + 39, y + 31);
+ctx.lineTo(x + 36, y + 46);
+ctx.lineTo(x + 9, y + 46);
+ctx.closePath();
 ctx.fill();
 
 
 // schlitze
-
-ctx.strokeStyle = "#d8dde2";
+ctx.strokeStyle = "#b8bec4";
 ctx.lineWidth = 1.5;
 
 for(let i = 0; i < 4; i++){
 
+    let sx = x + 11 + i * 6;
+
     ctx.beginPath();
-    ctx.moveTo(x + 10 + i * 7, y + 33);
-    ctx.lineTo(x + 10 + i * 7, y + 41);
+    ctx.moveTo(sx, y + 33);
+    ctx.lineTo(sx, y + 44);
     ctx.stroke();
 
 }
 
 
 // glanz
-
 ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
-ctx.arc(x + 10, y + 16, 3, 0, Math.PI * 2);
+ctx.arc(
+    x + 11,
+    y + 16,
+    3,
+    0,
+    Math.PI * 2
+);
+
 ctx.fill();
 
   // schwert
