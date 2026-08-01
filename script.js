@@ -291,79 +291,66 @@ function drawDoodle(){
 
 
 
-  // helm
+ // helm
 
-ctx.fillStyle = "#c7ccd1";
+ctx.fillStyle = "#cfd4d8";
 
 ctx.beginPath();
-
-ctx.moveTo(x - 2, y + 18);
-ctx.lineTo(x + 46, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 2, y + 72);
-ctx.lineTo(x - 8, y + 60);
-ctx.lineTo(x - 8, y + 35);
-
+ctx.moveTo(x + 5, y + 18);
+ctx.quadraticCurveTo(x + 22, y - 2, x + 40, y + 18);
+ctx.lineTo(x + 47, y + 30);
+ctx.lineTo(x + 47, y + 58);
+ctx.quadraticCurveTo(x + 22, y + 82, x - 3, y + 58);
+ctx.lineTo(x - 3, y + 30);
 ctx.closePath();
 ctx.fill();
 
 
-// rand
+// rechter schatten
 
-ctx.strokeStyle = "#f3f5f7";
-ctx.lineWidth = 3;
+ctx.fillStyle = "#9da4aa";
+
+ctx.beginPath();
+ctx.moveTo(x + 22, y + 8);
+ctx.lineTo(x + 47, y + 30);
+ctx.lineTo(x + 47, y + 58);
+ctx.quadraticCurveTo(x + 35, y + 72, x + 22, y + 75);
+ctx.closePath();
+ctx.fill();
+
+
+// metallrand
+
+ctx.strokeStyle = "#f7f8fa";
+ctx.lineWidth = 2.5;
 ctx.stroke();
-
-
-// schatten
-
-ctx.fillStyle = "#8d9399";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 28, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 28, y + 72);
-
-ctx.closePath();
-ctx.fill();
 
 
 // visier
 
-ctx.fillStyle = "#2a2a2a";
+ctx.fillStyle = "#50555b";
 
-ctx.fillRect(
-    x,
-    y + 33,
-    44,
-    12
+ctx.beginPath();
+ctx.roundRect(
+    x + 4,
+    y + 31,
+    36,
+    12,
+    4
 );
+ctx.fill();
 
 
-// visier-schlitze
+// schlitze
 
-ctx.strokeStyle = "#9ea4aa";
-ctx.lineWidth = 2;
+ctx.strokeStyle = "#d8dde2";
+ctx.lineWidth = 1.5;
 
 for(let i = 0; i < 4; i++){
 
     ctx.beginPath();
-
-    ctx.moveTo(
-        x + 8 + i * 10,
-        y + 33
-    );
-
-    ctx.lineTo(
-        x + 8 + i * 10,
-        y + 45
-    );
-
+    ctx.moveTo(x + 10 + i * 7, y + 33);
+    ctx.lineTo(x + 10 + i * 7, y + 41);
     ctx.stroke();
 
 }
@@ -374,294 +361,8 @@ for(let i = 0; i < 4; i++){
 ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
-
-ctx.arc(
-    x + 8,
-    y + 26,
-    4,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();// helm
-
-ctx.fillStyle = "#c7ccd1";
-
-ctx.beginPath();
-
-ctx.moveTo(x - 2, y + 18);
-ctx.lineTo(x + 46, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 2, y + 72);
-ctx.lineTo(x - 8, y + 60);
-ctx.lineTo(x - 8, y + 35);
-
-ctx.closePath();
+ctx.arc(x + 10, y + 16, 3, 0, Math.PI * 2);
 ctx.fill();
-
-
-// rand
-
-ctx.strokeStyle = "#f3f5f7";
-ctx.lineWidth = 3;
-ctx.stroke();
-
-
-// schatten
-
-ctx.fillStyle = "#8d9399";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 28, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 28, y + 72);
-
-ctx.closePath();
-ctx.fill();
-
-
-// visier
-
-ctx.fillStyle = "#2a2a2a";
-
-ctx.fillRect(
-    x,
-    y + 33,
-    44,
-    12
-);
-
-
-// visier-schlitze
-
-ctx.strokeStyle = "#9ea4aa";
-ctx.lineWidth = 2;
-
-for(let i = 0; i < 4; i++){
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        x + 8 + i * 10,
-        y + 33
-    );
-
-    ctx.lineTo(
-        x + 8 + i * 10,
-        y + 45
-    );
-
-    ctx.stroke();
-
-}
-
-
-// glanz
-
-ctx.fillStyle = "#ffffff";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 8,
-    y + 26,
-    4,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();// helm
-
-ctx.fillStyle = "#c7ccd1";
-
-ctx.beginPath();
-
-ctx.moveTo(x - 2, y + 18);
-ctx.lineTo(x + 46, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 2, y + 72);
-ctx.lineTo(x - 8, y + 60);
-ctx.lineTo(x - 8, y + 35);
-
-ctx.closePath();
-ctx.fill();
-
-
-// rand
-
-ctx.strokeStyle = "#f3f5f7";
-ctx.lineWidth = 3;
-ctx.stroke();
-
-
-// schatten
-
-ctx.fillStyle = "#8d9399";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 28, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 28, y + 72);
-
-ctx.closePath();
-ctx.fill();
-
-
-// visier
-
-ctx.fillStyle = "#2a2a2a";
-
-ctx.fillRect(
-    x,
-    y + 33,
-    44,
-    12
-);
-
-
-// visier-schlitze
-
-ctx.strokeStyle = "#9ea4aa";
-ctx.lineWidth = 2;
-
-for(let i = 0; i < 4; i++){
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        x + 8 + i * 10,
-        y + 33
-    );
-
-    ctx.lineTo(
-        x + 8 + i * 10,
-        y + 45
-    );
-
-    ctx.stroke();
-
-}
-
-
-// glanz
-
-ctx.fillStyle = "#ffffff";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 8,
-    y + 26,
-    4,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();// helm
-
-ctx.fillStyle = "#c7ccd1";
-
-ctx.beginPath();
-
-ctx.moveTo(x - 2, y + 18);
-ctx.lineTo(x + 46, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 2, y + 72);
-ctx.lineTo(x - 8, y + 60);
-ctx.lineTo(x - 8, y + 35);
-
-ctx.closePath();
-ctx.fill();
-
-
-// rand
-
-ctx.strokeStyle = "#f3f5f7";
-ctx.lineWidth = 3;
-ctx.stroke();
-
-
-// schatten
-
-ctx.fillStyle = "#8d9399";
-
-ctx.beginPath();
-
-ctx.moveTo(x + 28, y + 18);
-ctx.lineTo(x + 52, y + 35);
-ctx.lineTo(x + 52, y + 60);
-ctx.lineTo(x + 42, y + 72);
-ctx.lineTo(x + 28, y + 72);
-
-ctx.closePath();
-ctx.fill();
-
-
-// visier
-
-ctx.fillStyle = "#2a2a2a";
-
-ctx.fillRect(
-    x,
-    y + 33,
-    44,
-    12
-);
-
-
-// visier-schlitze
-
-ctx.strokeStyle = "#9ea4aa";
-ctx.lineWidth = 2;
-
-for(let i = 0; i < 4; i++){
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        x + 8 + i * 10,
-        y + 33
-    );
-
-    ctx.lineTo(
-        x + 8 + i * 10,
-        y + 45
-    );
-
-    ctx.stroke();
-
-}
-
-
-// glanz
-
-ctx.fillStyle = "#ffffff";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 8,
-    y + 26,
-    4,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();
-
-
 
   // schwert
 
