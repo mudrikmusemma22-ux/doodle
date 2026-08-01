@@ -381,7 +381,7 @@ function update(){
 
     for(let m of mountains){
 
-    console.log(m.x - camera.x);
+   // console.log(m.x - camera.x);
 
     if(m.x - camera.x < 0){
 
