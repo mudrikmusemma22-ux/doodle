@@ -372,93 +372,93 @@ ctx.arc(
     0,
     Math.PI * 2
 );
-// ===== ritter schwert fix =====
+// ===== episches ritter schwert =====
 
 // klinge
 
-ctx.fillStyle = "#d9dde2";
+ctx.fillStyle = "#dfe6eb";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 38, y + 78);
-ctx.lineTo(x + 82, y + 25);
-ctx.lineTo(x + 90, y + 32);
-ctx.lineTo(x + 55, y + 88);
+ctx.moveTo(x + 45, y + 82);
+ctx.lineTo(x + 95, y + 5);
+ctx.lineTo(x + 105, y + 15);
+ctx.lineTo(x + 62, y + 90);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// dunkle metallseite
+// dunkle seite
 
-ctx.fillStyle = "#7f8790";
+ctx.fillStyle = "#7c858d";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 82, y + 25);
-ctx.lineTo(x + 92, y + 32);
-ctx.lineTo(x + 58, y + 88);
-ctx.lineTo(x + 55, y + 88);
+ctx.moveTo(x + 95, y + 5);
+ctx.lineTo(x + 105, y + 15);
+ctx.lineTo(x + 62, y + 90);
+ctx.lineTo(x + 55, y + 82);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// klingen glanz
+// glanz
 
 ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 48, y + 76);
-ctx.lineTo(x + 78, y + 35);
-ctx.lineTo(x + 74, y + 55);
-ctx.lineTo(x + 58, y + 80);
+ctx.moveTo(x + 55, y + 75);
+ctx.lineTo(x + 92, y + 20);
+ctx.lineTo(x + 82, y + 55);
+ctx.lineTo(x + 65, y + 80);
 
 ctx.closePath();
 
 ctx.fill();
 
 
-// parierstange
+// goldene parierstange
 
-ctx.strokeStyle = "#d4a72c";
-ctx.lineWidth = 7;
+ctx.strokeStyle = "#e6b83f";
+ctx.lineWidth = 8;
 ctx.lineCap = "round";
 
 ctx.beginPath();
 
-ctx.moveTo(x + 35, y + 85);
-ctx.lineTo(x + 70, y + 85);
+ctx.moveTo(x + 35, y + 88);
+ctx.lineTo(x + 70, y + 88);
 
 ctx.stroke();
 
 
 // griff
 
-ctx.strokeStyle = "#6b3f1e";
-ctx.lineWidth = 8;
+ctx.strokeStyle = "#5b351c";
+ctx.lineWidth = 9;
 
 ctx.beginPath();
 
-ctx.moveTo(x + 52, y + 87);
-ctx.lineTo(x + 52, y + 105);
+ctx.moveTo(x + 52, y + 90);
+ctx.lineTo(x + 52, y + 110);
 
 ctx.stroke();
 
 
 // knauf
 
-ctx.fillStyle = "#f5c542";
+ctx.fillStyle = "#ffd34e";
 
 ctx.beginPath();
 
 ctx.arc(
     x + 52,
-    y + 108,
-    5,
+    y + 113,
+    6,
     0,
     Math.PI * 2
 );
@@ -466,16 +466,16 @@ ctx.arc(
 ctx.fill();
 
 
-// kleiner magie punkt
+// magischer glanz
 
 ctx.fillStyle = "#dfffff";
 
 ctx.beginPath();
 
 ctx.arc(
-    x + 84,
-    y + 30,
-    3,
+    x + 98,
+    y + 12,
+    4,
     0,
     Math.PI * 2
 );
