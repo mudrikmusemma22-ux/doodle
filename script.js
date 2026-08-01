@@ -291,86 +291,375 @@ function drawDoodle(){
 
 
 
-    // silber helm
+  // helm
 
-ctx.fillStyle = "red";
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 22,
-    y + 35,
-    30,
-    0,
-    Math.PI * 2
-);
-
-ctx.fill();
-
-
-// schatten am helm
-
-ctx.fillStyle = "#7b8085";
+ctx.fillStyle = "#c7ccd1";
 
 ctx.beginPath();
 
-ctx.arc(
-    x + 35,
-    y + 45,
-    18,
-    0,
-    Math.PI * 2
-);
+ctx.moveTo(x - 2, y + 18);
+ctx.lineTo(x + 46, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 2, y + 72);
+ctx.lineTo(x - 8, y + 60);
+ctx.lineTo(x - 8, y + 35);
 
+ctx.closePath();
 ctx.fill();
 
 
-// metall rand
+// rand
 
-ctx.strokeStyle = "#e8edf2";
+ctx.strokeStyle = "#f3f5f7";
 ctx.lineWidth = 3;
-
-ctx.beginPath();
-
-ctx.arc(
-    x + 22,
-    y + 35,
-    30,
-    0,
-    Math.PI * 2
-);
-
 ctx.stroke();
 
 
-// kleiner glanz
+// schatten
+
+ctx.fillStyle = "#8d9399";
+
+ctx.beginPath();
+
+ctx.moveTo(x + 28, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 28, y + 72);
+
+ctx.closePath();
+ctx.fill();
+
+
+// visier
+
+ctx.fillStyle = "#2a2a2a";
+
+ctx.fillRect(
+    x,
+    y + 33,
+    44,
+    12
+);
+
+
+// visier-schlitze
+
+ctx.strokeStyle = "#9ea4aa";
+ctx.lineWidth = 2;
+
+for(let i = 0; i < 4; i++){
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        x + 8 + i * 10,
+        y + 33
+    );
+
+    ctx.lineTo(
+        x + 8 + i * 10,
+        y + 45
+    );
+
+    ctx.stroke();
+
+}
+
+
+// glanz
 
 ctx.fillStyle = "#ffffff";
 
 ctx.beginPath();
 
 ctx.arc(
-    x + 12,
-    y + 22,
-    5,
+    x + 8,
+    y + 26,
+    4,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();// helm
+
+ctx.fillStyle = "#c7ccd1";
+
+ctx.beginPath();
+
+ctx.moveTo(x - 2, y + 18);
+ctx.lineTo(x + 46, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 2, y + 72);
+ctx.lineTo(x - 8, y + 60);
+ctx.lineTo(x - 8, y + 35);
+
+ctx.closePath();
+ctx.fill();
+
+
+// rand
+
+ctx.strokeStyle = "#f3f5f7";
+ctx.lineWidth = 3;
+ctx.stroke();
+
+
+// schatten
+
+ctx.fillStyle = "#8d9399";
+
+ctx.beginPath();
+
+ctx.moveTo(x + 28, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 28, y + 72);
+
+ctx.closePath();
+ctx.fill();
+
+
+// visier
+
+ctx.fillStyle = "#2a2a2a";
+
+ctx.fillRect(
+    x,
+    y + 33,
+    44,
+    12
+);
+
+
+// visier-schlitze
+
+ctx.strokeStyle = "#9ea4aa";
+ctx.lineWidth = 2;
+
+for(let i = 0; i < 4; i++){
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        x + 8 + i * 10,
+        y + 33
+    );
+
+    ctx.lineTo(
+        x + 8 + i * 10,
+        y + 45
+    );
+
+    ctx.stroke();
+
+}
+
+
+// glanz
+
+ctx.fillStyle = "#ffffff";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 8,
+    y + 26,
+    4,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();// helm
+
+ctx.fillStyle = "#c7ccd1";
+
+ctx.beginPath();
+
+ctx.moveTo(x - 2, y + 18);
+ctx.lineTo(x + 46, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 2, y + 72);
+ctx.lineTo(x - 8, y + 60);
+ctx.lineTo(x - 8, y + 35);
+
+ctx.closePath();
+ctx.fill();
+
+
+// rand
+
+ctx.strokeStyle = "#f3f5f7";
+ctx.lineWidth = 3;
+ctx.stroke();
+
+
+// schatten
+
+ctx.fillStyle = "#8d9399";
+
+ctx.beginPath();
+
+ctx.moveTo(x + 28, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 28, y + 72);
+
+ctx.closePath();
+ctx.fill();
+
+
+// visier
+
+ctx.fillStyle = "#2a2a2a";
+
+ctx.fillRect(
+    x,
+    y + 33,
+    44,
+    12
+);
+
+
+// visier-schlitze
+
+ctx.strokeStyle = "#9ea4aa";
+ctx.lineWidth = 2;
+
+for(let i = 0; i < 4; i++){
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        x + 8 + i * 10,
+        y + 33
+    );
+
+    ctx.lineTo(
+        x + 8 + i * 10,
+        y + 45
+    );
+
+    ctx.stroke();
+
+}
+
+
+// glanz
+
+ctx.fillStyle = "#ffffff";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 8,
+    y + 26,
+    4,
+    0,
+    Math.PI * 2
+);
+
+ctx.fill();// helm
+
+ctx.fillStyle = "#c7ccd1";
+
+ctx.beginPath();
+
+ctx.moveTo(x - 2, y + 18);
+ctx.lineTo(x + 46, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 2, y + 72);
+ctx.lineTo(x - 8, y + 60);
+ctx.lineTo(x - 8, y + 35);
+
+ctx.closePath();
+ctx.fill();
+
+
+// rand
+
+ctx.strokeStyle = "#f3f5f7";
+ctx.lineWidth = 3;
+ctx.stroke();
+
+
+// schatten
+
+ctx.fillStyle = "#8d9399";
+
+ctx.beginPath();
+
+ctx.moveTo(x + 28, y + 18);
+ctx.lineTo(x + 52, y + 35);
+ctx.lineTo(x + 52, y + 60);
+ctx.lineTo(x + 42, y + 72);
+ctx.lineTo(x + 28, y + 72);
+
+ctx.closePath();
+ctx.fill();
+
+
+// visier
+
+ctx.fillStyle = "#2a2a2a";
+
+ctx.fillRect(
+    x,
+    y + 33,
+    44,
+    12
+);
+
+
+// visier-schlitze
+
+ctx.strokeStyle = "#9ea4aa";
+ctx.lineWidth = 2;
+
+for(let i = 0; i < 4; i++){
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        x + 8 + i * 10,
+        y + 33
+    );
+
+    ctx.lineTo(
+        x + 8 + i * 10,
+        y + 45
+    );
+
+    ctx.stroke();
+
+}
+
+
+// glanz
+
+ctx.fillStyle = "#ffffff";
+
+ctx.beginPath();
+
+ctx.arc(
+    x + 8,
+    y + 26,
+    4,
     0,
     Math.PI * 2
 );
 
 ctx.fill();
-
-
-
-    // visier
-
-    ctx.fillStyle = "#333";
-
-    ctx.fillRect(
-        x - 5,
-        y + 30,
-        50,
-        8
-    );
 
 
 
