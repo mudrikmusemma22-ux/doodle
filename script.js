@@ -1,3 +1,6 @@
+//doodle
+
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
@@ -520,16 +523,14 @@ for(let ground of snowGrounds){
 
     }
 
-
  // nach links laufen
-    
     if(ground.x - camera.x > canvas.width + 800){
 
         let smallest = Math.min(...snowGrounds.map(s => s.x));
 
         ground.x = smallest - ground.w + 1;
         ground.hills = createSnowHills();
-    }
+
     
 }
     
@@ -540,8 +541,6 @@ for(let ground of snowGrounds){
     }
 
 }
-
-    
 function drawBrush(){
 
     if(mouse.down && brush){
