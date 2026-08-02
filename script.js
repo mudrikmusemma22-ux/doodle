@@ -520,6 +520,8 @@ for(let ground of snowGrounds){
 
     }
 
+    }
+
  // nach links laufen
     if(ground.x - camera.x > canvas.width + 800){
 
