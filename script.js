@@ -585,6 +585,33 @@ for (let x = 0; x <= 4000; x += 40) {
     hills.push(Math.random() * 15);
 }
 
+let snowGrounds = [];
+
+for(let i = 0; i < 5; i++){
+
+    snowGrounds.push({
+        x: i * 800,
+        w: 800,
+        hills: createSnowHills()
+    });
+
+}
+
+
+function createSnowHills(){
+
+    let hills = [];
+
+    for(let x = 0; x <= 800; x += 40){
+
+        hills.push(Math.random() * 15);
+
+    }
+
+    return hills;
+
+}
+
 // zeichnen
 
 function draw(){
@@ -639,41 +666,46 @@ for(let m of mountains){
     );
 
 }
-   // schnee
-
-ctx.fillStyle = "#fdf8ef";
-
-ctx.fillRect(
-    0,
-    canvas.height - 120,
-    canvas.width,
-    120
-);
-
-
-// natürliche schneekante
-
-ctx.fillStyle = "#fffdf8";
-
-ctx.beginPath();
-
-ctx.moveTo(0, canvas.height - 120);
-
-for(let x = 0; x <= canvas.width; x += 40){
-
     
-ctx.lineTo(
-    x,
-    canvas.height - 120 - hills[x / 40]
-);
+  // schnee boden loop
+
+for(let ground of snowGrounds){
+
+    ctx.fillStyle = "#fffdf8";
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        ground.x - camera.x,
+        canvas.height - 120
+    );
+
+
+    for(let i = 0; i < ground.hills.length; i++){
+
+        ctx.lineTo(
+            ground.x + i * 40 - camera.x,
+            canvas.height - 120 - ground.hills[i]
+        );
+
+    }
+
+
+    ctx.lineTo(
+        ground.x + ground.w - camera.x,
+        canvas.height
+    );
+
+    ctx.lineTo(
+        ground.x - camera.x,
+        canvas.height
+    );
+
+
+    ctx.closePath();
+    ctx.fill();
 
 }
-
-ctx.lineTo(canvas.width, canvas.height);
-ctx.lineTo(0, canvas.height);
-
-ctx.closePath();
-ctx.fill();
 
 
 
