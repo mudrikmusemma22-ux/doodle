@@ -494,6 +494,23 @@ for(let m of mountains){
     }
 
 }
+
+    
+    // schnee loop
+
+for(let ground of snowGrounds){
+
+    if(ground.x - camera.x < -800){
+
+        let farthest = Math.max(...snowGrounds.map(s => s.x + s.w));
+
+        ground.x = farthest + 200;
+
+        ground.hills = createSnowHills();
+
+    }
+
+}
     
     if(keys["a"] || keys["d"]){
         player.walkTime += 0.2;
