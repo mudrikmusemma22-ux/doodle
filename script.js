@@ -504,7 +504,7 @@ for(let ground of snowGrounds){
 
         let farthest = Math.max(...snowGrounds.map(s => s.x + s.w));
 
-        ground.x = farthest + 200;
+        ground.x = farthest - 1;
 
         ground.hills = createSnowHills();
 
