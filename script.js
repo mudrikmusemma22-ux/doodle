@@ -562,6 +562,12 @@ function drawBrush(){
 
 }
 
+let hills = [];
+
+for (let x = 0; x <= 4000; x += 40) {
+    hills.push(Math.random() * 15);
+}
+
 // zeichnen
 
 function draw(){
@@ -638,12 +644,11 @@ ctx.moveTo(0, canvas.height - 120);
 
 for(let x = 0; x <= canvas.width; x += 40){
 
-    let hill = Math.random() * 15;
-
-    ctx.lineTo(
-        x,
-        canvas.height - 120 - hill
-    );
+    
+ctx.lineTo(
+    x,
+    canvas.height - 120 - hills[x / 40]
+);
 
 }
 
