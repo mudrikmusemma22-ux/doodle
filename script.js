@@ -498,6 +498,8 @@ for(let m of mountains){
     
     // schnee loop
 
+// nach rechts laufen
+    
 for(let ground of snowGrounds){
 
     if(ground.x - camera.x < -800){
@@ -510,6 +512,15 @@ for(let ground of snowGrounds){
 
     }
 
+ // nach links laufen
+    if(ground.x - camera.x > canvas.width + 800){
+
+        let smallest = Math.min(...snowGrounds.map(s => s.x));
+
+        ground.x = smallest - ground.w + 1;
+        ground.hills = createSnowHills();
+
+    
 }
     
     if(keys["a"] || keys["d"]){
