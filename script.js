@@ -493,6 +493,14 @@ for(let m of mountains){
 
     }
 
+if(m.x - camera.x > canvas.width + 800){
+
+    let smallest = Math.min(...mountains.map(b => b.x));
+
+    m.x = smallest - m.w - 200;
+
+}
+    
 }
 
     
@@ -530,6 +538,8 @@ for(let ground of snowGrounds){
     }
 
 }
+
+    
 function drawBrush(){
 
     if(mouse.down && brush){
