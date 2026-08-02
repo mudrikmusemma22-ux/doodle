@@ -500,7 +500,7 @@ for(let m of mountains){
 
 for(let ground of snowGrounds){
 
-    if(ground.x - camera.x < -800){
+    if(ground.x - camera.x < -200){
 
         let farthest = Math.max(...snowGrounds.map(s => s.x + s.w));
 
