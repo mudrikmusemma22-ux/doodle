@@ -17,6 +17,32 @@ const mountains = [
     {x: 2400, w: 800, h: 500}
 ];
 
+let snowGrounds = [];
+
+for(let i = 0; i < 9; i++){
+
+    snowGrounds.push({
+        x: i * 800,
+        w: 800,
+        hills: createSnowHills()
+    });
+
+}
+
+
+function createSnowHills(){
+
+    let hills = [];
+
+    for(let x = 0; x <= 800; x += 40){
+
+        hills.push(Math.random() * 15);
+
+    }
+
+    return hills;
+
+}
 
 // größe
 
@@ -499,8 +525,6 @@ for(let m of mountains){
    // schnee loop
 
 for (let ground of snowGrounds) {
-
-console.log(ground.x);
     
     // nach rechts
     if (ground.x - camera.x < -ground.w) {
@@ -597,32 +621,6 @@ for (let x = 0; x <= 4000; x += 40) {
     hills.push(Math.random() * 15);
 }
 
-let snowGrounds = [];
-
-for(let i = 0; i < 9; i++){
-
-    snowGrounds.push({
-        x: i * 800,
-        w: 800,
-        hills: createSnowHills()
-    });
-
-}
-
-
-function createSnowHills(){
-
-    let hills = [];
-
-    for(let x = 0; x <= 800; x += 40){
-
-        hills.push(Math.random() * 15);
-
-    }
-
-    return hills;
-
-}
 
 // zeichnen
 
