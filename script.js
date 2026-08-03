@@ -500,6 +500,8 @@ for(let m of mountains){
 
 for (let ground of snowGrounds) {
 
+console.log(ground.x);
+    
     // nach rechts
     if (ground.x - camera.x < -ground.w) {
 
