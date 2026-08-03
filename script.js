@@ -496,16 +496,26 @@ for(let m of mountains){
 }
 
     
-    // schnee loop
+   // schnee loop
 
-for(let ground of snowGrounds){
+for (let ground of snowGrounds) {
 
-    if(ground.x - camera.x < -800){
+    // nach rechts
+    if (ground.x - camera.x < -ground.w) {
 
-        let farthest = Math.max(...snowGrounds.map(s => s.x + s.w));
+        let farthest = Math.max(...snowGrounds.map(s => s.x));
 
-        ground.x = farthest + 200;
+        ground.x = farthest + ground.w;
+        ground.hills = createSnowHills();
 
+    }
+
+    // nach links
+    if (ground.x - camera.x > canvas.width) {
+
+        let smallest = Math.min(...snowGrounds.map(s => s.x));
+
+        ground.x = smallest - ground.w;
         ground.hills = createSnowHills();
 
     }
