@@ -536,15 +536,14 @@ for (let ground of snowGrounds) {
 
     }
 
-    // nach links
-    if (ground.x - camera.x > canvas.width) {
+    if (ground.x - camera.x > canvas.width + ground.w) {
 
-        let smallest = Math.min(...snowGrounds.map(s => s.x));
+    let smallest = Math.min(...snowGrounds.map(s => s.x));
 
-        ground.x = smallest - ground.w;
-        ground.hills = createSnowHills();
+    ground.x = smallest - ground.w;
+    ground.hills = createSnowHills();
 
-    }
+}
 
 }
     
